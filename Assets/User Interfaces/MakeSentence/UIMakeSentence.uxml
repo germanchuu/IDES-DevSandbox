@@ -1,0 +1,73 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/User%20Interfaces/MakeSentence/StylesMakeSentence.uss?fileID=7433441132597879392&amp;guid=4a76b37c17bc7cf4eb1fffaff73cbd4a&amp;type=3#StylesMakeSentence" />
+    <ui:VisualElement name="body" style="flex-grow: 1; width: 100%; height: 100%; background-color: rgb(255, 255, 255);">
+        <ui:VisualElement name="sentenceContainer" style="flex-grow: 1; height: 15%;">
+            <ui:VisualElement name="border" style="flex-grow: 1; border-top-left-radius: 35px; border-top-right-radius: 35px; border-bottom-right-radius: 35px; border-bottom-left-radius: 35px; border-left-color: rgb(166, 166, 166); border-right-color: rgb(166, 166, 166); border-top-color: rgb(166, 166, 166); border-bottom-color: rgb(166, 166, 166); border-top-width: 2px; border-right-width: 2px; border-bottom-width: 2px; border-left-width: 2px; margin-top: 10px; margin-right: 10px; margin-bottom: 10px; margin-left: 10px; justify-content: center; align-items: flex-start; padding-top: 15px; padding-right: 15px; padding-bottom: 15px; padding-left: 15px;">
+                <ui:Label tabindex="-1" text="Oración en elaboración..." parse-escape-sequences="true" display-tooltip-when-elided="true" name="lblSentence" style="font-size: 60px; color: rgb(91, 91, 91); text-shadow: 2px 1.9px 3.1px rgba(0, 0, 0, 0.21);" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:VisualElement name="buttonsContainer" style="flex-grow: 1; height: 15%; flex-direction: row; justify-content: space-around; margin-right: 10px; margin-left: 10px;">
+            <ui:VisualElement name="containerSave" style="flex-grow: 1; width: 33%; justify-content: space-around; align-items: stretch; align-self: auto;">
+                <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" name="btnSave" class="button">
+                    <ui:VisualElement name="buttonDistribution" class="buttonDistribution">
+                        <ui:VisualElement name="icon" class="buttonIcon" style="background-image: url(&apos;project://database/Assets/User%20Interfaces/MakeSentence/Elements/SaveSentence.png?fileID=2800000&amp;guid=25c3350d68acaa84497b6da22660df8e&amp;type=3#SaveSentence&apos;);" />
+                        <ui:Label tabindex="-1" text="Guardar" parse-escape-sequences="true" display-tooltip-when-elided="true" class="buttonText" />
+                    </ui:VisualElement>
+                </ui:Button>
+            </ui:VisualElement>
+            <ui:VisualElement name="containerListen" style="flex-grow: 1; width: 33%;">
+                <ui:Button text="&#10;" parse-escape-sequences="true" display-tooltip-when-elided="true" name="btnListen" class="button">
+                    <ui:VisualElement name="buttonDistribution" class="buttonDistribution">
+                        <ui:VisualElement name="icon" class="buttonIcon" style="background-image: url(&apos;project://database/Assets/User%20Interfaces/MakeSentence/Elements/Listen.png?fileID=2800000&amp;guid=772ca2e5d2b99dd478b678ecbf80400f&amp;type=3#Listen&apos;);" />
+                        <ui:Label tabindex="-1" text="Escuchar" parse-escape-sequences="true" display-tooltip-when-elided="true" class="buttonText" />
+                    </ui:VisualElement>
+                </ui:Button>
+            </ui:VisualElement>
+            <ui:VisualElement name="containerDelete" style="flex-grow: 1; width: 33%;">
+                <ui:Button text="&#10;" parse-escape-sequences="true" display-tooltip-when-elided="true" name="btnDelete" class="button">
+                    <ui:VisualElement name="buttonDistribution" class="buttonDistribution">
+                        <ui:VisualElement name="icon" class="buttonIcon" style="background-image: url(&apos;project://database/Assets/User%20Interfaces/MakeSentence/Elements/Delete.png?fileID=2800000&amp;guid=f37f0f9af0bea0b479cb3789977178dc&amp;type=3#Delete&apos;);" />
+                        <ui:Label tabindex="-1" text="Borrar" parse-escape-sequences="true" display-tooltip-when-elided="true" class="buttonText" />
+                    </ui:VisualElement>
+                </ui:Button>
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:VisualElement name="makerContainer" style="flex-grow: 1; height: 70%; padding-top: 15px; padding-right: 0; padding-bottom: 0; padding-left: 15px; flex-direction: row;">
+            <ui:VisualElement name="suggestedWordsContainer" style="flex-grow: 1; width: 30%; align-self: auto; justify-content: flex-start; align-items: stretch; padding-right: 13px;">
+                <ui:VisualElement name="suggestedWord" class="suggestedWord">
+                    <ui:VisualElement name="distribution" style="flex-grow: 1; flex-direction: row; padding-top: 10px; padding-right: 10px; padding-bottom: 10px; padding-left: 10px;">
+                        <ui:Label tabindex="-1" text="Palabra Sugerida 1" parse-escape-sequences="true" display-tooltip-when-elided="true" class="suggestedWordText" />
+                        <ui:VisualElement name="icon" class="suggestedWordIcon" />
+                    </ui:VisualElement>
+                </ui:VisualElement>
+                <ui:VisualElement name="suggestedWord" class="suggestedWord" style="flex-grow: 1;">
+                    <ui:VisualElement name="distribution" style="flex-grow: 1; flex-direction: row; padding-top: 10px; padding-right: 10px; padding-bottom: 10px; padding-left: 10px;">
+                        <ui:Label tabindex="-1" text="Palabra Sugerida 2" parse-escape-sequences="true" display-tooltip-when-elided="true" class="suggestedWordText" />
+                        <ui:VisualElement name="icon" class="suggestedWordIcon" />
+                    </ui:VisualElement>
+                </ui:VisualElement>
+                <ui:VisualElement name="suggestedWord" class="suggestedWord" style="flex-grow: 1;">
+                    <ui:VisualElement name="distribution" style="flex-grow: 1; flex-direction: row; padding-top: 10px; padding-right: 10px; padding-bottom: 10px; padding-left: 10px;">
+                        <ui:Label tabindex="-1" text="Palabra Sugerida 3" parse-escape-sequences="true" display-tooltip-when-elided="true" class="suggestedWordText" />
+                        <ui:VisualElement name="icon" class="suggestedWordIcon" />
+                    </ui:VisualElement>
+                </ui:VisualElement>
+                <ui:VisualElement name="suggestedWord" class="suggestedWord" style="flex-grow: 1;">
+                    <ui:VisualElement name="distribution" style="flex-grow: 1; flex-direction: row; padding-top: 10px; padding-right: 10px; padding-bottom: 10px; padding-left: 10px;">
+                        <ui:Label tabindex="-1" text="Palabra Sugerida 4" parse-escape-sequences="true" display-tooltip-when-elided="true" class="suggestedWordText" />
+                        <ui:VisualElement name="icon" class="suggestedWordIcon" />
+                    </ui:VisualElement>
+                </ui:VisualElement>
+                <ui:VisualElement name="suggestedWord" class="suggestedWord" style="flex-grow: 1;">
+                    <ui:VisualElement name="distribution" style="flex-grow: 1; flex-direction: row; padding-top: 10px; padding-right: 10px; padding-bottom: 10px; padding-left: 10px;">
+                        <ui:Label tabindex="-1" text="Palabra Sugerida 5" parse-escape-sequences="true" display-tooltip-when-elided="true" class="suggestedWordText" />
+                        <ui:VisualElement name="icon" class="suggestedWordIcon" />
+                    </ui:VisualElement>
+                </ui:VisualElement>
+            </ui:VisualElement>
+            <ui:VisualElement name="selectPictoContainer" style="flex-grow: 1; width: 70%; background-color: rgb(235, 235, 235); border-top-left-radius: 40px; justify-content: space-around;">
+                <ui:Label tabindex="-1" text="SECCIÓN: NAVEGAR ENTRE PICTOGRAMAS" parse-escape-sequences="true" display-tooltip-when-elided="true" style="-unity-text-align: middle-center; font-size: 49px; -unity-font-style: bold-and-italic; color: rgb(172, 172, 172);" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

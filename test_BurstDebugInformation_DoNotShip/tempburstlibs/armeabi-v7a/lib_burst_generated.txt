@@ -7,6 +7,7 @@ Library: D:\Proyecto de Grado\Proyectos\IDES-DevSandbox\Temp\BurstOutput\tempbur
 --dump=Function
 --float-precision=Standard
 --assembly-defines=UnityEngine;
+--assembly-defines=Assembly-CSharp;
 --assembly-defines=Unity.2D.IK.Runtime;
 --assembly-defines=Unity.Burst;
 --assembly-defines=Unity.VisualScripting.Core;

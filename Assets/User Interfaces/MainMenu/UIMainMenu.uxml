@@ -1,0 +1,67 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/User%20Interfaces/InlineStyles.uss?fileID=7433441132597879392&amp;guid=fe13d594f3393e84fa3350a561dd4a4b&amp;type=3#InlineStyles" />
+    <ui:VisualElement name="body" class="body" style="flex-grow: 1;">
+        <ui:VisualElement name="sideMenu" style="flex-grow: 1; width: 30%; background-image: url(&apos;project://database/Assets/User%20Interfaces/MainMenu/Assets/BackgroundPng.png?fileID=2800000&amp;guid=1f32846d974bdc249b17b49aaa56737e&amp;type=3#BackgroundPng&apos;);">
+            <ui:VisualElement name="helloUser" class="helloUser" style="flex-grow: 1; height: 40%; width: 85%; margin-left: 15%;">
+                <ui:VisualElement name="userStringContainer" class="userStringContainer">
+                    <ui:Label tabindex="-1" text="HOLA" parse-escape-sequences="true" display-tooltip-when-elided="true" name="hello" class="hello" />
+                </ui:VisualElement>
+                <ui:VisualElement name="helloStringContainer" class="helloStringContainer">
+                    <ui:Label tabindex="-1" text="USUARIO" parse-escape-sequences="true" display-tooltip-when-elided="true" name="user" class="user" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+            <ui:VisualElement name="quickAcces" style="flex-grow: 1; height: 40%;">
+                <ui:VisualElement name="separator" style="flex-grow: 1; height: 5%; align-items: center; align-self: center; width: 85%; border-top-width: 3px; border-top-color: rgb(163, 163, 163); margin-right: 5%;" />
+                <ui:Label tabindex="-1" text="Acceso rápido..." parse-escape-sequences="true" display-tooltip-when-elided="true" name="quickAccesTitle" class="quickAcces" />
+                <ui:Button text="Oración 1" parse-escape-sequences="true" display-tooltip-when-elided="true" name="btnQuickAcces1" class="quickAcces quickAccessSentence" style="color: rgb(91, 91, 91); background-color: rgba(188, 188, 188, 0); border-left-color: rgba(149, 149, 149, 0); border-right-color: rgba(149, 149, 149, 0); border-top-color: rgba(149, 149, 149, 0); border-bottom-color: rgba(149, 149, 149, 0);" />
+                <ui:Button text="Oración 2" parse-escape-sequences="true" display-tooltip-when-elided="true" name="btnQuickAcces2" class="quickAcces quickAccessSentence" style="color: rgb(91, 91, 91); background-color: rgba(188, 188, 188, 0); border-left-color: rgba(149, 149, 149, 0); border-right-color: rgba(149, 149, 149, 0); border-top-color: rgba(149, 149, 149, 0); border-bottom-color: rgba(149, 149, 149, 0);" />
+                <ui:Button text="Oración 3" parse-escape-sequences="true" display-tooltip-when-elided="true" name="btnQuickAcces3" class="quickAcces quickAccessSentence" style="color: rgb(91, 91, 91); background-color: rgba(188, 188, 188, 0); border-left-color: rgba(149, 149, 149, 0); border-right-color: rgba(149, 149, 149, 0); border-top-color: rgba(149, 149, 149, 0); border-bottom-color: rgba(149, 149, 149, 0);" />
+            </ui:VisualElement>
+            <ui:VisualElement name="config" style="flex-grow: 1; height: 20%; align-self: auto; align-items: flex-start; justify-content: flex-start; flex-direction: row;">
+                <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" name="btnConfig" class="btnConfig" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:VisualElement name="buttons" class="buttons">
+            <ui:VisualElement name="top" style="flex-grow: 1; flex-direction: row; justify-content: center; align-self: auto; align-items: center; top: 5%;">
+                <ui:VisualElement name="makeSentence" class="buttonContainerShadow" style="background-color: rgba(173, 173, 173, 0.16);">
+                    <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" name="btnMakeSentence" class="button" style="padding-top: 15px; padding-left: 15px; padding-bottom: 15px; padding-right: 15px; left: -10px; top: -10px; background-color: rgb(245, 245, 245); border-left-color: rgba(149, 149, 149, 0); border-right-color: rgba(149, 149, 149, 0); border-top-color: rgba(149, 149, 149, 0); border-bottom-color: rgba(149, 149, 149, 0); margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; flex-direction: column; flex-wrap: nowrap;">
+                        <ui:VisualElement name="icon" class="iconButton" />
+                        <ui:Label tabindex="-1" text="ELABORAR ORACIÓN" parse-escape-sequences="true" display-tooltip-when-elided="true" name="title" class="titleButton" />
+                        <ui:Label tabindex="-1" text="Escoge pictogramas para armar tu oración" parse-escape-sequences="true" display-tooltip-when-elided="true" name="subtitle" class="subtitleButton" />
+                    </ui:Button>
+                </ui:VisualElement>
+                <ui:VisualElement name="saveSentence" class="buttonContainerShadow" style="background-color: rgba(173, 173, 173, 0.16);">
+                    <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" name="btnSaveSentence" class="button" style="padding-top: 15px; padding-left: 15px; padding-bottom: 15px; padding-right: 15px; left: -10px; top: -10px; background-color: rgb(245, 245, 245); border-left-color: rgba(149, 149, 149, 0); border-right-color: rgba(149, 149, 149, 0); border-top-color: rgba(149, 149, 149, 0); border-bottom-color: rgba(149, 149, 149, 0); margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; flex-direction: column; flex-wrap: nowrap;">
+                        <ui:VisualElement name="icon" class="iconButton" style="background-image: url(&apos;project://database/Assets/User%20Interfaces/MainMenu/Assets/SaveSentence.png?fileID=2800000&amp;guid=5a86535dc17c3c648a041478bc2bf93a&amp;type=3#SaveSentence&apos;);" />
+                        <ui:Label tabindex="-1" text="ORACIONES GUARDADAS" parse-escape-sequences="true" display-tooltip-when-elided="true" name="title" class="titleButton" />
+                        <ui:Label tabindex="-1" text="Oraciones que guardas para reutilizarlas" parse-escape-sequences="true" display-tooltip-when-elided="true" name="subtitle" class="subtitleButton" />
+                    </ui:Button>
+                </ui:VisualElement>
+            </ui:VisualElement>
+            <ui:VisualElement name="bot" style="flex-grow: 1; align-self: auto; flex-direction: row; justify-content: center; align-items: center; bottom: 5%;">
+                <ui:VisualElement name="defaultSentence" class="buttonContainerShadow" style="background-color: rgba(173, 173, 173, 0.16);">
+                    <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" name="btnDefaultSentence" class="button" style="padding-top: 15px; padding-left: 15px; padding-bottom: 15px; padding-right: 15px; left: -10px; top: -10px; background-color: rgb(245, 245, 245); border-left-color: rgba(149, 149, 149, 0); border-right-color: rgba(149, 149, 149, 0); border-top-color: rgba(149, 149, 149, 0); border-bottom-color: rgba(149, 149, 149, 0); margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; flex-direction: column; flex-wrap: nowrap;">
+                        <ui:VisualElement name="icon" class="iconButton" style="background-image: url(&apos;project://database/Assets/User%20Interfaces/MainMenu/Assets/DefaultSentence.png?fileID=2800000&amp;guid=bc8a2450914d3d84ab31bff4fc58c390&amp;type=3#DefaultSentence&apos;);" />
+                        <ui:Label tabindex="-1" text="ORACIONES PREDEFINIDAS" parse-escape-sequences="true" display-tooltip-when-elided="true" name="title" class="titleButton" />
+                        <ui:Label tabindex="-1" text="Oraciones que vienen con el sistema" parse-escape-sequences="true" display-tooltip-when-elided="true" name="subtitle" class="subtitleButton" />
+                    </ui:Button>
+                </ui:VisualElement>
+                <ui:VisualElement name="map" class="buttonContainerShadow" style="background-color: rgba(173, 173, 173, 0.16);">
+                    <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" name="btnMap" class="button" style="padding-top: 15px; padding-left: 15px; padding-bottom: 15px; padding-right: 15px; left: -10px; top: -10px; background-color: rgb(245, 245, 245); border-left-color: rgba(149, 149, 149, 0); border-right-color: rgba(149, 149, 149, 0); border-top-color: rgba(149, 149, 149, 0); border-bottom-color: rgba(149, 149, 149, 0); margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; flex-direction: column; flex-wrap: nowrap;">
+                        <ui:VisualElement name="icon" class="iconButton" style="background-image: url(&apos;project://database/Assets/User%20Interfaces/MainMenu/Assets/Map.png?fileID=2800000&amp;guid=067c7bf76d6157d42919b2e1da45d899&amp;type=3#Map&apos;);" />
+                        <ui:Label tabindex="-1" text="MAPA" parse-escape-sequences="true" display-tooltip-when-elided="true" name="title" class="titleButton" />
+                        <ui:Label tabindex="-1" text="Muestra de manera sencilla la ubicación &#10;de tu hogar" parse-escape-sequences="true" display-tooltip-when-elided="true" name="subtitle" class="subtitleButton" />
+                    </ui:Button>
+                </ui:VisualElement>
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:VisualElement name="quickSetup" style="flex-grow: 1; width: 25%; align-items: flex-start; justify-content: center;">
+            <ui:Label tabindex="-1" text="Elaboración rápida..." parse-escape-sequences="true" display-tooltip-when-elided="true" name="quickMakerTitle" class="quickSetup" />
+            <ui:Button text="Palabra frecuente 1" parse-escape-sequences="true" display-tooltip-when-elided="true" name="btnRecentWord1" class="quickAccessSentence quickSetup" style="color: rgb(91, 91, 91); background-color: rgba(188, 188, 188, 0); border-left-color: rgba(149, 149, 149, 0); border-right-color: rgba(149, 149, 149, 0); border-top-color: rgba(149, 149, 149, 0); border-bottom-color: rgba(149, 149, 149, 0);" />
+            <ui:Button text="Palabra frecuente 2" parse-escape-sequences="true" display-tooltip-when-elided="true" name="btnRecentWord2" class="quickAccessSentence quickSetup" style="color: rgb(91, 91, 91); background-color: rgba(188, 188, 188, 0); border-left-color: rgba(149, 149, 149, 0); border-right-color: rgba(149, 149, 149, 0); border-top-color: rgba(149, 149, 149, 0); border-bottom-color: rgba(149, 149, 149, 0);" />
+            <ui:Button text="Palabra frecuente 3" parse-escape-sequences="true" display-tooltip-when-elided="true" name="btnRecentWord3" class="quickAccessSentence quickSetup" style="color: rgb(91, 91, 91); background-color: rgba(188, 188, 188, 0); border-left-color: rgba(149, 149, 149, 0); border-right-color: rgba(149, 149, 149, 0); border-top-color: rgba(149, 149, 149, 0); border-bottom-color: rgba(149, 149, 149, 0);" />
+            <ui:Button text="Palabra frecuente 4" parse-escape-sequences="true" display-tooltip-when-elided="true" name="btnRecentWord4" class="quickAccessSentence quickSetup" style="color: rgb(91, 91, 91); background-color: rgba(188, 188, 188, 0); border-left-color: rgba(149, 149, 149, 0); border-right-color: rgba(149, 149, 149, 0); border-top-color: rgba(149, 149, 149, 0); border-bottom-color: rgba(149, 149, 149, 0);" />
+            <ui:Button text="Palabra frecuente 5" parse-escape-sequences="true" display-tooltip-when-elided="true" name="btnRecentWord5" class="quickAccessSentence quickSetup" style="color: rgb(91, 91, 91); background-color: rgba(188, 188, 188, 0); border-left-color: rgba(149, 149, 149, 0); border-right-color: rgba(149, 149, 149, 0); border-top-color: rgba(149, 149, 149, 0); border-bottom-color: rgba(149, 149, 149, 0);" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

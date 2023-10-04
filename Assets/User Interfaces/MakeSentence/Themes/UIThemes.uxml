@@ -1,0 +1,11 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/User%20Interfaces/MakeSentence/Themes/StylesThemes.uss?fileID=7433441132597879392&amp;guid=668fa3f981e76a14fa7b5bbe13e5bb05&amp;type=3#StylesThemes" />
+    <ui:VisualElement name="body" style="flex-grow: 1; width: 100%; height: 100%;">
+        <ui:VisualElement name="container" class="container">
+            <ui:VisualElement name="themeContainer" class="theme" />
+            <ui:VisualElement name="themeNameContainer" class="themeNameContainer">
+                <ui:Label tabindex="-1" text="Temática" parse-escape-sequences="true" display-tooltip-when-elided="true" name="lblTheme" class="lblTheme" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

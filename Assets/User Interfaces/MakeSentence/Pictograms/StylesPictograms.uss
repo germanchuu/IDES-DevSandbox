@@ -1,0 +1,43 @@
+VisualElement {
+    width: 250px;
+    height: 250px;
+}
+
+.container {
+    flex-grow: 1;
+    border-left-color: rgb(82, 82, 82);
+    border-right-color: rgb(82, 82, 82);
+    border-top-color: rgb(82, 82, 82);
+    border-bottom-color: rgb(82, 82, 82);
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+    border-bottom-left-radius: 25px;
+    border-top-width: 3px;
+    border-right-width: 3px;
+    border-bottom-width: 3px;
+    border-left-width: 3px;
+    overflow: hidden;
+}
+
+.textContainer {
+    flex-grow: 1;
+    height: 20%;
+    background-color: rgb(204, 204, 204);
+    justify-content: space-around;
+    align-items: center;
+}
+
+.pictogram {
+    flex-grow: 1;
+    height: 80%;
+    background-color: rgba(217, 217, 217, 0.6);
+    background-image: none;
+    -unity-background-scale-mode: scale-to-fit;
+}
+
+.lblPictogramText {
+    color: rgb(48, 48, 48);
+    font-size: 30px;
+    -unity-text-align: middle-center;
+}

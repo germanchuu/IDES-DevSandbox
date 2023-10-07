@@ -11,6 +11,7 @@ public class ResourceUIManager : MonoBehaviour
     private UIDocument makeSentence;
     private ScrollView pictogramsScroll;
     private ScrollView categoriesScroll;
+    public Label lblSentence;
 
     void Start()
     {
@@ -21,6 +22,8 @@ public class ResourceUIManager : MonoBehaviour
         VisualElement root = makeSentence.rootVisualElement;
         pictogramsScroll = root.Q<ScrollView>("pictosScroll");
         categoriesScroll = root.Q<ScrollView>("categoriesScroll");
+        lblSentence = root.Q<Label>("lblSentence");
+        lblSentence.text = loader.STREAMING_ASSETS_PATH;
 
         LoadThemes(themeList);
     }

@@ -19,15 +19,19 @@ public class ResourceLoader : MonoBehaviour
         foreach (var fileThemePath in filesThemePath)
         {
             Theme theme = new()
-            {                
+            {
                 name = fileThemePath.Substring(0, fileThemePath.LastIndexOf('/')),
                 image = LoadImageFromFile(fileThemePath),
                 pictograms = null
             };
-            
+
+            //theme.priority = theme.CalculateThemePriority(theme.name);
+
             themes.Add(theme);
         }
 
+        //themes = themes.OrderBy(theme => theme.priority).ToList();
+        Debug.Log("Cantida de temas: " + themes.Count);
         return themes;
     }
 

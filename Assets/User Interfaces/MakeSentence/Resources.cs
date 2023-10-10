@@ -13,6 +13,11 @@ public class Theme
 {
     public string name;
     public Sprite image;
-    public List<Pictogram> pictograms = new List<Pictogram>();
-    public string route;
+    public int priority;
+    public List<Pictogram> pictograms = new List<Pictogram>();    
+
+    public int CalculateTheme(string name)
+    {
+        return 0;
+    }
 }

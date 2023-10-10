@@ -5,27 +5,40 @@ using UnityEngine.UIElements;
 
 public class ResourceUIManager : MonoBehaviour
 {
+    ResourceLoader loader;
+
     public VisualTreeAsset themeAsset;
     public VisualTreeAsset pictogramAsset;
     
     private UIDocument makeSentence;
     private ScrollView pictogramsScroll;
     private ScrollView categoriesScroll;
-    public Label lblSentence;
+    private Label lblSentence;
+    private Button btnDelete;
 
     void Start()
     {
-        ResourceLoader loader = GetComponent<ResourceLoader>();
+        loader = GetComponent<ResourceLoader>();
         List<Theme> themeList = loader.GetThemes();
 
+        InitializedUIElements();
+
+        LoadThemes(themeList);
+    }
+
+    void InitializedUIElements()
+    {
         makeSentence = GetComponent<UIDocument>();
         VisualElement root = makeSentence.rootVisualElement;
         pictogramsScroll = root.Q<ScrollView>("pictosScroll");
         categoriesScroll = root.Q<ScrollView>("categoriesScroll");
         lblSentence = root.Q<Label>("lblSentence");
-        lblSentence.text = loader.STREAMING_ASSETS_PATH;
 
-        LoadThemes(themeList);
+        btnDelete = root.Q<Button>("btnDelete");
+        btnDelete.RegisterCallback<ClickEvent>(e =>
+        {            
+            lblSentence.text = SentenceButtonManager.DeleteWord(lblSentence.text);
+        });
     }
 
     #region ThemesManager
@@ -36,11 +49,13 @@ public class ResourceUIManager : MonoBehaviour
             TemplateContainer item = SetThemeTemplate(themeAsset.Instantiate(), theme);
             categoriesScroll.contentContainer.Add(item);
 
-            item.RegisterCallback<MouseUpEvent>(e =>
-            {
-                LoadPictograms(theme.name);
-            });
+            item.RegisterCallback<ClickEvent>(e =>
+            {                
+                LoadPictograms(theme);
+            });                        
         }
+
+        LoadPictograms(themes[0]);
     }
 
     TemplateContainer SetThemeTemplate(TemplateContainer item, Theme theme)
@@ -54,13 +69,36 @@ public class ResourceUIManager : MonoBehaviour
         return item;
     }
 
-    void LoadPictograms(string name)
-    {
-        Debug.Log("CallBack registrado para: " + name);
-    }
     #endregion
 
     #region PictogramsManager
+    void LoadPictograms(Theme theme)
+    {        
+        theme.pictograms ??= loader.GetPictograms(theme);                
+        pictogramsScroll.contentContainer.Clear();
+        pictogramsScroll.scrollOffset = new Vector2(0, 0);
 
+        foreach (var pictogram in theme.pictograms)
+        {
+            TemplateContainer item = SetPictogramTemplate(pictogramAsset.Instantiate(), pictogram);
+            pictogramsScroll.contentContainer.Add(item);
+
+            item.RegisterCallback<ClickEvent>(e =>
+            {
+                lblSentence.text += ' ' + pictogram.name;
+            });
+        }        
+    }
+
+    TemplateContainer SetPictogramTemplate(TemplateContainer item, Pictogram pictogram)
+    {
+        item.style.width = 300;
+        item.style.height = 300;
+        item.style.marginLeft = 15;
+        item.style.marginRight = 15;
+        item.Q<Label>("lblPictogram").text = pictogram.name;
+        item.Q<VisualElement>("pictogramContainer").style.backgroundImage = new StyleBackground(pictogram.image);
+        return item;
+    }
     #endregion
 }

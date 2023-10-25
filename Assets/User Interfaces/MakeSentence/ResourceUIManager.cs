@@ -13,6 +13,7 @@ public class ResourceUIManager : MonoBehaviour
     private UIDocument makeSentence;
     private ScrollView pictogramsScroll;
     private ScrollView categoriesScroll;
+    private ScrollView sentenceScroll;
     private Label lblSentence;
     private Button btnDelete;
 
@@ -32,6 +33,7 @@ public class ResourceUIManager : MonoBehaviour
         VisualElement root = makeSentence.rootVisualElement;
         pictogramsScroll = root.Q<ScrollView>("pictosScroll");
         categoriesScroll = root.Q<ScrollView>("categoriesScroll");
+        sentenceScroll = root.Q<ScrollView>("sentenceScroll");
         lblSentence = root.Q<Label>("lblSentence");
 
         btnDelete = root.Q<Button>("btnDelete");
@@ -85,10 +87,15 @@ public class ResourceUIManager : MonoBehaviour
 
             item.RegisterCallback<ClickEvent>(e =>
             {
-                lblSentence.text += ' ' + pictogram.name;
+                lblSentence.text += ' ' + pictogram.name;          
+                                
+                sentenceScroll.scrollOffset = lblSentence.layout.max - sentenceScroll.contentViewport.layout.size;                
+                Debug.Log("Valor: " + sentenceScroll.horizontalScroller.value);
+                Debug.Log("Máximo valor: " + sentenceScroll.horizontalScroller.highValue);
+                Debug.Log("Diferencia: " + (sentenceScroll.horizontalScroller.highValue - sentenceScroll.horizontalScroller.value));
             });
         }        
-    }
+    }    
 
     TemplateContainer SetPictogramTemplate(TemplateContainer item, Pictogram pictogram)
     {

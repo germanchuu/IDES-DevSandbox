@@ -16,11 +16,11 @@ public class Theme
     public int priority;
     public List<Pictogram> pictograms = new List<Pictogram>();    
 
-    public int CalculateThemePriority(string name)
+    public int GetPriority(string name)
     {
         name = name.ToLower();
 
-        Dictionary<string, int> keyPriorities = new Dictionary<string, int>
+        Dictionary<string, int> keyPriorities = new()
         {
             {"pronombres", 1 },
             {"adverbios", 2 },

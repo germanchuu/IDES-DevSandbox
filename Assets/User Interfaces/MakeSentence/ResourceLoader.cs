@@ -25,13 +25,11 @@ public class ResourceLoader : MonoBehaviour
                 pictograms = null
             };
 
-            //theme.priority = theme.CalculateThemePriority(theme.name);
-
+            theme.priority = theme.GetPriority(theme.name);
             themes.Add(theme);
         }
 
-        //themes = themes.OrderBy(theme => theme.priority).ToList();
-        Debug.Log("Cantida de temas: " + themes.Count);
+        themes = themes.OrderBy(theme => theme.priority).ToList();        
         return themes;
     }
 
@@ -66,6 +64,7 @@ public class ResourceLoader : MonoBehaviour
         string[] pngFolderFiles = BetterStreamingAssets.GetFiles($"/{themeName}", "*.png", SearchOption.AllDirectories);
         string[] jpgfolderFiles = BetterStreamingAssets.GetFiles($"/{themeName}", "*.jpg", SearchOption.AllDirectories);
         string[] folderFiles = pngFolderFiles.Concat(jpgfolderFiles).ToArray();
+
         string ignoreName = "ThemeImage.png";
         string[] filteredFiles = folderFiles.Where(file => Path.GetFileName(file) != ignoreName).ToArray();
 

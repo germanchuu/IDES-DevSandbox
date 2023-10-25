@@ -27,6 +27,9 @@ public class SwitchScreens : MonoBehaviour
         btnMap = root.Q<Button>("btnMap");
 
         btnMakeSentence.RegisterCallback<ClickEvent, UIDocument>(SwitchScreen, documents[1]);
+        btnSaveSentence.RegisterCallback<ClickEvent, UIDocument>(SwitchScreen, documents[2]);
+        //btnDefaultSentence.RegisterCallback<ClickEvent, UIDocument>(SwitchScreen, documents[3]);
+        //btnMap.RegisterCallback<ClickEvent, UIDocument>(SwitchScreen, documents[4]);
     }
 
     void SwitchScreen(ClickEvent ev, UIDocument uIDocument)
@@ -42,8 +45,7 @@ public class SwitchScreens : MonoBehaviour
                 document.rootVisualElement.style.display = DisplayStyle.None;
             else
                 document.rootVisualElement.style.display = DisplayStyle.Flex;
-        }
-        Debug.Log($"UIDocument habilitado: {uIDocument.name}");
+        }        
     }
 
     private void Update()

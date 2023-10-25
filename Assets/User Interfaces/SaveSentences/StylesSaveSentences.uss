@@ -1,0 +1,41 @@
+VisualElement {
+}
+
+.buttonText {
+    width: 75%;
+    font-size: 55px;
+    -unity-font-style: bold-and-italic;
+    color: rgb(91, 91, 91);
+    text-shadow: 2.5px 1.4px 4.7px rgba(0, 0, 0, 0.3);
+}
+
+.buttonIcon {
+    flex-grow: 1;
+    width: 25%;
+    background-image: url('project://database/Assets/User%20Interfaces/MainMenu/Assets/SaveSentence.png?fileID=2800000&guid=5a86535dc17c3c648a041478bc2bf93a&type=3#SaveSentence');
+    -unity-background-image-tint-color: rgba(173, 173, 173, 0.65);
+    -unity-background-scale-mode: scale-to-fit;
+    height: auto;
+    justify-content: space-around;
+    align-items: stretch;
+    margin-left: 15px;
+}
+
+.buttonDistribution {
+    flex-grow: 1;
+    flex-direction: row;
+}
+
+.button {
+    height: 60%;
+    background-color: rgb(225, 225, 225);
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+    border-bottom-left-radius: 25px;
+    border-left-color: rgba(149, 149, 149, 0);
+    border-right-color: rgba(149, 149, 149, 0);
+    border-top-color: rgba(149, 149, 149, 0);
+    border-bottom-color: rgba(149, 149, 149, 0);
+    justify-content: center;
+}

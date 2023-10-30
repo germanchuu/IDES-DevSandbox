@@ -1,13 +1,17 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
 using System.Xml.Linq;
 using UnityEngine;
 using UnityEngine.UIElements;
 
 public class SwitchScreens : MonoBehaviour
 {
-    [SerializeField] List<UIDocument> documents;
+    [SerializeField] List<GameObject> gameObjects;
+    
+    List<UIDocument> documents;
+    Subject subject;
     UIDocument menu;
 
     // Botones menú principal
@@ -18,6 +22,9 @@ public class SwitchScreens : MonoBehaviour
 
     void OnEnable()
     {
+        documents = GetUIDocuments();
+        subject = RegisterObservers();
+
         menu = documents[0];
         VisualElement root = menu.rootVisualElement;
 
@@ -32,9 +39,40 @@ public class SwitchScreens : MonoBehaviour
         //btnMap.RegisterCallback<ClickEvent, UIDocument>(SwitchScreen, documents[4]);
     }
 
+    private Subject RegisterObservers()
+    {
+        Subject subject = new();
+
+        foreach (GameObject obj in gameObjects)
+        {
+            IObserver observer = obj.GetComponent<IObserver>();
+            if (observer != null)
+                subject.RegisterObserver(observer);
+        }
+
+        return subject;
+    }
+
+    private List<UIDocument> GetUIDocuments()
+    {
+        List<UIDocument> documents = new List<UIDocument>();
+
+        foreach (GameObject obj in gameObjects)
+        {
+            UIDocument document = obj.GetComponent<UIDocument>();
+            if (document != null)
+                documents.Add(document);
+        }
+
+        return documents;
+    }
+
     void SwitchScreen(ClickEvent ev, UIDocument uIDocument)
     {
-        DisplayScreens(uIDocument);        
+        Thread thread = new(subject.NotifyObserver);
+        thread.Start();
+
+        DisplayScreens(uIDocument);            
     }
 
     void DisplayScreens(UIDocument uIDocument)

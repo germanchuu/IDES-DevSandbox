@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-public class ResourceUIManager : MonoBehaviour
+public class ResourceUIManager : MonoBehaviour, IObserver
 {
     ResourceLoader loader;
 
@@ -55,6 +55,8 @@ public class ResourceUIManager : MonoBehaviour
     #region ThemesManager
     void LoadThemes(List<Theme> themes)
     {
+        categoriesScroll.contentContainer.Clear();
+
         foreach (var theme in themes)
         {
             TemplateContainer item = SetThemeTemplate(themeAsset.Instantiate(), theme);
@@ -112,5 +114,11 @@ public class ResourceUIManager : MonoBehaviour
         item.Q<VisualElement>("pictogramContainer").style.backgroundImage = new StyleBackground(pictogram.image);
         return item;
     }
+
     #endregion
+
+    public void UpdateUI()
+    {
+        lblSentence.text = "";
+    }
 }

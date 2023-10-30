@@ -5,8 +5,6 @@ using UnityEngine;
 
 public class SentenceButtonManager
 {
-    public static IObserver ObserverSavedSentences;    
-
     public static string DeleteLastWord(string sentence)
     {
         string[] words = sentence.Split(' ');
@@ -27,14 +25,7 @@ public class SentenceButtonManager
         popUp.ShowPopUp("Confirmar", $"¿Estás seguro de guardar la oración?\n\n\"{sentence}\"", () =>
         {
             SavedSentencesManager manager = new();
-            manager.InsertData(sentence);
-
-            if (ObserverSavedSentences != null)
-            {
-                ISubject subject = new Subject();
-                subject.RegisterObserver(ObserverSavedSentences);
-                subject.NotifyObserver();                
-            }            
+            manager.InsertData(sentence);              
         });        
     }    
 }

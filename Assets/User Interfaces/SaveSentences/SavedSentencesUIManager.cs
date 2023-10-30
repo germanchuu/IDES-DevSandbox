@@ -11,17 +11,11 @@ public class SavedSentencesUIManager : MonoBehaviour, IObserver
 
     UIDocument savedSentences;
     ScrollView sentencesScroll;
-    Label sentenceLabel;
-
-    public void UpdateUI()
-    {
-        LoadSentences();
-    }
+    Label sentenceLabel;    
 
     private void Awake()
     {
-        InitializedUIElements();
-        SentenceButtonManager.ObserverSavedSentences = this;
+        InitializedUIElements();        
 
         manager = new();
         LoadSentences();
@@ -60,5 +54,10 @@ public class SavedSentencesUIManager : MonoBehaviour, IObserver
         item.Q<Label>("lblSentence").text = sentence;
         item.Q<Label>("lblSentence").style.width = new StyleLength(new Length(100f, LengthUnit.Percent));
         return item;
+    }
+
+    public void UpdateUI()
+    {
+        LoadSentences();
     }
 }

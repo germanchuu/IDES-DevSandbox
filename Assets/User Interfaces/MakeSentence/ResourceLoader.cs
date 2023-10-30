@@ -17,10 +17,10 @@ public class ResourceLoader : MonoBehaviour
         var filesThemePath = LoadThemeFolders();
 
         foreach (var fileThemePath in filesThemePath)
-        {
+        {            
             Theme theme = new()
             {
-                name = fileThemePath.Substring(0, fileThemePath.LastIndexOf('/')),
+                name = Path.GetFileName(Path.GetDirectoryName(fileThemePath)),
                 image = LoadImageFromFile(fileThemePath),
                 pictograms = null
             };
@@ -40,8 +40,7 @@ public class ResourceLoader : MonoBehaviour
 
         foreach (var filePictogramPath in filesPictogramPath)
         {
-            string pictogramName = Path.GetFileNameWithoutExtension(filePictogramPath.Substring(filePictogramPath.LastIndexOf("/")).TrimStart('/'));
-
+            string pictogramName = Path.GetFileNameWithoutExtension(Path.GetFileName(filePictogramPath));            
             Pictogram pictogram = new()
             {
                 name = pictogramName,
@@ -56,13 +55,13 @@ public class ResourceLoader : MonoBehaviour
 
     private string[] LoadThemeFolders()
     {
-        return BetterStreamingAssets.GetFiles("/", "ThemeImage.png", SearchOption.AllDirectories);
+        return BetterStreamingAssets.GetFiles("Pictograms", "ThemeImage.png", SearchOption.AllDirectories);
     }
 
     private string[] LoadPictogramsFolders(string themeName)
     {
-        string[] pngFolderFiles = BetterStreamingAssets.GetFiles($"/{themeName}", "*.png", SearchOption.AllDirectories);
-        string[] jpgfolderFiles = BetterStreamingAssets.GetFiles($"/{themeName}", "*.jpg", SearchOption.AllDirectories);
+        string[] pngFolderFiles = BetterStreamingAssets.GetFiles($"Pictograms/{themeName}", "*.png", SearchOption.AllDirectories);
+        string[] jpgfolderFiles = BetterStreamingAssets.GetFiles($"Pictograms/{themeName}", "*.jpg", SearchOption.AllDirectories);
         string[] folderFiles = pngFolderFiles.Concat(jpgfolderFiles).ToArray();
 
         string ignoreName = "ThemeImage.png";

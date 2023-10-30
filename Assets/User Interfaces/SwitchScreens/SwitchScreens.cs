@@ -43,8 +43,8 @@ public class SwitchScreens : MonoBehaviour
         {
             if (document != uIDocument)
                 document.rootVisualElement.style.display = DisplayStyle.None;
-            else
-                document.rootVisualElement.style.display = DisplayStyle.Flex;
+            else            
+                document.rootVisualElement.style.display = DisplayStyle.Flex;                                           
         }        
     }
 

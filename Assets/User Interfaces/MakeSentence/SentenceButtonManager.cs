@@ -1,18 +1,40 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SentenceButtonManager 
+public class SentenceButtonManager
 {
-    public static string DeleteWord(string sentence)
-    {
-        int lastSpaceIndex = sentence.Trim().LastIndexOf(' ');
-        
-        if (lastSpaceIndex != -1)        
-            sentence = sentence.Substring(0, lastSpaceIndex);        
-        else
-            sentence = "";        
+    public static IObserver ObserverSavedSentences;    
 
-        return sentence;
+    public static string DeleteLastWord(string sentence)
+    {
+        string[] words = sentence.Split(' ');
+
+        if (words.Length >= 2)
+        {
+            Array.Resize(ref words, words.Length - 1);
+            return string.Join(" ", words);
+        }
+        else
+            return string.Empty;
     }
+
+    public static void SaveSentence(string sentence, PopUpHandler popUp)
+    {        
+        sentence.Trim();
+
+        popUp.ShowPopUp("Confirmar", $"¿Estás seguro de guardar la oración?\n\n\"{sentence}\"", () =>
+        {
+            SavedSentencesManager manager = new();
+            manager.InsertData(sentence);
+
+            if (ObserverSavedSentences != null)
+            {
+                ISubject subject = new Subject();
+                subject.RegisterObserver(ObserverSavedSentences);
+                subject.NotifyObserver();                
+            }            
+        });        
+    }    
 }

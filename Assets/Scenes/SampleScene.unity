@@ -245,6 +245,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 2065861007}
   - {fileID: 866147951}
   - {fileID: 2030929937}
   - {fileID: 1425422089}
@@ -324,6 +325,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1425422089}
   - component: {fileID: 1425422090}
+  - component: {fileID: 1425422091}
   m_Layer: 0
   m_Name: UISaveSentence
   m_TagString: Untagged
@@ -362,6 +364,19 @@ MonoBehaviour:
   m_ParentUI: {fileID: 0}
   sourceAsset: {fileID: 9197481963319205126, guid: dfaa3373b3974ab44a6d658fb3bb118c, type: 3}
   m_SortingOrder: 0
+--- !u!114 &1425422091
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1425422088}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3bfd82356a9de24580ae4b09db9dc97, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sentenceAsset: {fileID: 9197481963319205126, guid: 77a6d14b77b72a74ba8cf740994cf853, type: 3}
 --- !u!1 &2030929936
 GameObject:
   m_ObjectHideFlags: 0
@@ -426,6 +441,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   themeAsset: {fileID: 9197481963319205126, guid: 43fd81ada10520645b473f85710fdeb6, type: 3}
   pictogramAsset: {fileID: 9197481963319205126, guid: 6b375de44d3162f4cb3c1c2ce87bf6b1, type: 3}
+  popUpHandler: {fileID: 2065861009}
 --- !u!114 &2030929941
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -436,6 +452,67 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3bbd9018af694434bad2b01ac1609b02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &2065861006
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2065861007}
+  - component: {fileID: 2065861008}
+  - component: {fileID: 2065861009}
+  m_Layer: 0
+  m_Name: UIPopUp
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2065861007
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2065861006}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 654891829}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2065861008
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2065861006}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 19102, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_PanelSettings: {fileID: 11400000, guid: cbcf0fa3649b91b4a82937f96958b2e5, type: 2}
+  m_ParentUI: {fileID: 0}
+  sourceAsset: {fileID: 9197481963319205126, guid: 8c83341dcd20d9d4a94a7b00a961a772, type: 3}
+  m_SortingOrder: 2
+--- !u!114 &2065861009
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2065861006}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90a118da8be8e2141acd6513906dc68c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1660057539 &9223372036854775807

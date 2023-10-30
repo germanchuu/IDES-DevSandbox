@@ -1,0 +1,19 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/User%20Interfaces/PopUp/PopUpStyles.uss?fileID=7433441132597879392&amp;guid=6301618d43d44894b9bea4b5b9aa57d5&amp;type=3#PopUpStyles" />
+    <ui:VisualElement name="background" class="background">
+        <ui:VisualElement name="popUp" class="popUp" style="background-color: rgb(209, 209, 209);">
+            <ui:VisualElement name="nav" class="nav" style="background-color: rgb(161, 161, 161);">
+                <ui:Label tabindex="-1" text="Confirmar" parse-escape-sequences="true" display-tooltip-when-elided="true" name="lblTitle" class="text" style="-unity-text-align: middle-left; height: 100%; width: 100%; font-size: 45px; color: rgb(58, 58, 58); -unity-font-style: bold; margin-left: 0; margin-top: 0; margin-bottom: 0; margin-right: 0; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 50px;" />
+            </ui:VisualElement>
+            <ui:VisualElement name="container" style="flex-grow: 1; height: 85%;">
+                <ui:VisualElement name="textContainer" style="flex-grow: 1; height: 40%; align-items: center;">
+                    <ui:Label tabindex="-1" text="¿Estás seguro de eliminar la oración?" parse-escape-sequences="true" display-tooltip-when-elided="true" name="lblMessage" class="text" />
+                </ui:VisualElement>
+                <ui:VisualElement name="buttonsContainer" style="flex-grow: 1; height: 60%; flex-direction: row; justify-content: space-around; align-items: flex-start; align-self: auto;">
+                    <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" text="✔" name="btnConfirm" class="buttons" style="background-color: rgba(25, 113, 43, 0.81);" />
+                    <ui:Button text="✘" parse-escape-sequences="true" display-tooltip-when-elided="true" name="btnCancel" class="buttons" style="background-color: rgb(161, 68, 68);" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

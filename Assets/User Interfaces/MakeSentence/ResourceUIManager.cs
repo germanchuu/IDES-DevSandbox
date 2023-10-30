@@ -9,6 +9,7 @@ public class ResourceUIManager : MonoBehaviour
 
     public VisualTreeAsset themeAsset;
     public VisualTreeAsset pictogramAsset;
+    public PopUpHandler popUpHandler;
     
     private UIDocument makeSentence;
     private ScrollView pictogramsScroll;
@@ -16,6 +17,8 @@ public class ResourceUIManager : MonoBehaviour
     private ScrollView sentenceScroll;
     private Label lblSentence;
     private Button btnDelete;
+    private Button btnSaveSentence;
+    private Button btnListenSentence;
 
     void Start()
     {
@@ -39,7 +42,13 @@ public class ResourceUIManager : MonoBehaviour
         btnDelete = root.Q<Button>("btnDelete");
         btnDelete.RegisterCallback<ClickEvent>(e =>
         {            
-            lblSentence.text = SentenceButtonManager.DeleteWord(lblSentence.text);
+            lblSentence.text = SentenceButtonManager.DeleteLastWord(lblSentence.text);
+        });
+
+        btnSaveSentence = root.Q<Button>("btnSave");
+        btnSaveSentence.RegisterCallback<ClickEvent>(e =>
+        {            
+            SentenceButtonManager.SaveSentence(lblSentence.text, popUpHandler);            
         });
     }
 
@@ -87,12 +96,8 @@ public class ResourceUIManager : MonoBehaviour
 
             item.RegisterCallback<ClickEvent>(e =>
             {
-                lblSentence.text += ' ' + pictogram.name;          
-                                
+                lblSentence.text += ' ' + pictogram.name;                                          
                 sentenceScroll.scrollOffset = lblSentence.layout.max - sentenceScroll.contentViewport.layout.size;                
-                Debug.Log("Valor: " + sentenceScroll.horizontalScroller.value);
-                Debug.Log("Máximo valor: " + sentenceScroll.horizontalScroller.highValue);
-                Debug.Log("Diferencia: " + (sentenceScroll.horizontalScroller.highValue - sentenceScroll.horizontalScroller.value));
             });
         }        
     }    

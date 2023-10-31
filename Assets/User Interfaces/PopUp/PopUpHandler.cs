@@ -6,6 +6,8 @@ using UnityEngine.UIElements;
 
 public class PopUpHandler : MonoBehaviour
 {
+    private Action onClickCallback;
+
     private UIDocument popUpDoc;
     private Label popUpTitle;
     private Label popUpMessage;
@@ -31,22 +33,25 @@ public class PopUpHandler : MonoBehaviour
 
     public void ShowPopUp(string title, string message, Action method)
     {
-        popUpDoc.rootVisualElement.style.display = DisplayStyle.Flex;
+        onClickCallback = method;
 
+        popUpDoc.rootVisualElement.style.display = DisplayStyle.Flex;
         popUpTitle.text = title;
         popUpMessage.text = message;
-        popUpConfirm.clickable = null;
 
-        popUpConfirm.RegisterCallback<ClickEvent>(e => 
-        {
-            method?.Invoke();
-            popUpDoc.rootVisualElement.style.display = DisplayStyle.None;
-        });
+        popUpConfirm.UnregisterCallback<ClickEvent>(OnConfirmButtonClick);
+        popUpConfirm.RegisterCallback<ClickEvent>(OnConfirmButtonClick);
     }
 
     public void HidePopUp()
     {
-        popUpConfirm.clickable = null;
         popUpDoc.rootVisualElement.style.display = DisplayStyle.None;
+        popUpConfirm.UnregisterCallback<ClickEvent>(OnConfirmButtonClick);
+    }
+
+    private void OnConfirmButtonClick(ClickEvent evt)
+    {
+        onClickCallback?.Invoke();
+        HidePopUp();
     }
 }

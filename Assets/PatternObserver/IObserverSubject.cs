@@ -4,7 +4,7 @@ using UnityEngine;
 
 public interface IObserver
 {
-    void UpdateUI();
+    void Notify();
 }
 
 public interface ISubject

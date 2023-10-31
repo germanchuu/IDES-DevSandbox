@@ -10,8 +10,7 @@ public class SwitchScreens : MonoBehaviour
 {
     [SerializeField] List<GameObject> gameObjects;
     
-    List<UIDocument> documents;
-    Subject subject;
+    List<UIDocument> documents;    
     UIDocument menu;
 
     // Botones menú principal
@@ -22,8 +21,7 @@ public class SwitchScreens : MonoBehaviour
 
     void OnEnable()
     {
-        documents = GetUIDocuments();
-        subject = RegisterObservers();
+        documents = GetUIDocuments();        
 
         menu = documents[0];
         VisualElement root = menu.rootVisualElement;
@@ -39,28 +37,13 @@ public class SwitchScreens : MonoBehaviour
         //btnMap.RegisterCallback<ClickEvent, UIDocument>(SwitchScreen, documents[4]);
     }
 
-    private Subject RegisterObservers()
-    {
-        Subject subject = new();
-
-        foreach (GameObject obj in gameObjects)
-        {
-            IObserver observer = obj.GetComponent<IObserver>();
-            if (observer != null)
-                subject.RegisterObserver(observer);
-        }
-
-        return subject;
-    }
-
     private List<UIDocument> GetUIDocuments()
     {
-        List<UIDocument> documents = new List<UIDocument>();
+        List<UIDocument> documents = new();
 
         foreach (GameObject obj in gameObjects)
         {
-            UIDocument document = obj.GetComponent<UIDocument>();
-            if (document != null)
+            if (obj.TryGetComponent<UIDocument>(out var document))
                 documents.Add(document);
         }
 
@@ -69,10 +52,15 @@ public class SwitchScreens : MonoBehaviour
 
     void SwitchScreen(ClickEvent ev, UIDocument uIDocument)
     {
-        Thread thread = new(subject.NotifyObserver);
-        thread.Start();
+        DisplayScreens(uIDocument);
 
-        DisplayScreens(uIDocument);            
+        int documentIndex = documents.IndexOf(uIDocument);
+        if (documentIndex > 0 && documentIndex < gameObjects.Count)
+        {
+            GameObject gameObject = gameObjects[documentIndex];
+            IObserver observer = gameObject.GetComponent<IObserver>();
+            observer?.Notify();
+        }
     }
 
     void DisplayScreens(UIDocument uIDocument)
@@ -81,7 +69,7 @@ public class SwitchScreens : MonoBehaviour
         {
             if (document != uIDocument)
                 document.rootVisualElement.style.display = DisplayStyle.None;
-            else            
+            else
                 document.rootVisualElement.style.display = DisplayStyle.Flex;                                           
         }        
     }

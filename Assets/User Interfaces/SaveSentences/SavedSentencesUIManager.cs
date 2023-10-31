@@ -34,6 +34,9 @@ public class SavedSentencesUIManager : MonoBehaviour, IObserver
         Dictionary<int, string> sentences = manager.GetData();
         sentencesScroll.contentContainer.Clear();
 
+        if (sentences == null)
+            return;
+
         foreach (var sentence in sentences)
         {
             TemplateContainer item = SetSentenceTemplate(sentenceAsset.Instantiate(), sentence.Value);
@@ -56,8 +59,9 @@ public class SavedSentencesUIManager : MonoBehaviour, IObserver
         return item;
     }
 
-    public void UpdateUI()
+    public void Notify()
     {
         LoadSentences();
+        sentenceLabel.text = "";
     }
 }

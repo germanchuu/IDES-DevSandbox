@@ -10,7 +10,7 @@ public class Subject : ISubject
     {
         foreach (var observer in observers)
         {
-            observer.UpdateUI();
+            observer.Notify();
         }
     }
 

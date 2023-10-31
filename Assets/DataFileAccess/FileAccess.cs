@@ -17,7 +17,7 @@ public class FileAccess
         string tempPath = GetPath(dataFileName);
 
         string jsonData = JsonConvert.SerializeObject(dataToSave);
-        byte[] jsonByte = Encoding.ASCII.GetBytes(jsonData);
+        byte[] jsonByte = Encoding.UTF8.GetBytes(jsonData);
 
         if (!Directory.Exists(Path.GetDirectoryName(tempPath)))
         {
@@ -57,7 +57,7 @@ public class FileAccess
             Debug.LogWarning($"Error al cargar: {e.Message}");
         }
 
-        string jsonData = Encoding.ASCII.GetString(jsonByte);   
+        string jsonData = Encoding.UTF8.GetString(jsonByte);   
         object resultValue = JsonConvert.DeserializeObject<T>(jsonData);
 
         return (T)Convert.ChangeType(resultValue, typeof(T));

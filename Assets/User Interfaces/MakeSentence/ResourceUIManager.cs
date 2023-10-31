@@ -117,7 +117,7 @@ public class ResourceUIManager : MonoBehaviour, IObserver
 
     #endregion
 
-    public void UpdateUI()
+    public void Notify()
     {
         lblSentence.text = "";
     }

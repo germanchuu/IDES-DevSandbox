@@ -11,8 +11,8 @@
         <ui:VisualElement name="bodyContainer" style="flex-grow: 1; height: 80%; flex-direction: row;">
             <ui:ScrollView scroll-deceleration-rate="0,135" elasticity="0,1" name="scrollSentences" style="width: 65%;" />
             <ui:VisualElement name="buttonsContainer" style="flex-grow: 1; width: 35%; height: auto; flex-direction: column; justify-content: flex-start; align-items: stretch; align-self: auto; margin-top: 15px; margin-right: 15px; margin-bottom: 15px; margin-left: 15px;">
-                <ui:VisualElement name="containerSave" style="flex-grow: 1; width: auto; justify-content: space-around; align-items: stretch; align-self: auto; overflow: hidden; height: 33%;">
-                    <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" name="btnSave" class="button">
+                <ui:VisualElement name="containerRewrite" style="flex-grow: 1; width: auto; justify-content: space-around; align-items: stretch; align-self: auto; overflow: hidden; height: 33%;">
+                    <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" name="btnRewrite" class="button">
                         <ui:VisualElement name="buttonDistribution" class="buttonDistribution">
                             <ui:VisualElement name="icon" class="buttonIcon" style="background-image: url(&apos;project://database/Assets/User%20Interfaces/MakeSentence/Elements/SaveSentence.png?fileID=2800000&amp;guid=25c3350d68acaa84497b6da22660df8e&amp;type=3#SaveSentence&apos;);" />
                             <ui:Label tabindex="-1" text="Reescribir" parse-escape-sequences="true" display-tooltip-when-elided="true" class="buttonText" />

@@ -6,12 +6,18 @@ using UnityEngine.UIElements;
 public class SavedSentencesUIManager : MonoBehaviour, IObserver
 {
     public VisualTreeAsset sentenceAsset;
+    public PopUpHandler popUpHandler;
     
     SavedSentencesManager manager;
+    KeyValuePair<int, string> sentenceSelected;
 
     UIDocument savedSentences;
     ScrollView sentencesScroll;
-    Label sentenceLabel;    
+    Label sentenceLabel;
+
+    Button btnRewrite;
+    Button btnDelete;
+    Button btnListen;
 
     private void Awake()
     {
@@ -27,6 +33,28 @@ public class SavedSentencesUIManager : MonoBehaviour, IObserver
         VisualElement root = savedSentences.rootVisualElement;
         sentencesScroll = root.Q<ScrollView>("scrollSentences");
         sentenceLabel = root.Q<Label>("lblSentence");
+        btnRewrite = root.Q<Button>("btnRewrite");
+        btnDelete = root.Q<Button>("btnDelete");
+        btnListen = root.Q<Button>("btnListen");
+
+        btnRewrite.RegisterCallback<ClickEvent>(ev =>
+        {
+            
+        });
+
+        btnDelete.RegisterCallback<ClickEvent>(ev => 
+        {
+            if (savedSentences != null)
+            {
+                SentenceButtonManager.DeleteSavedSentence(sentenceSelected, popUpHandler);
+                Notify();
+            }
+        });
+
+        btnListen.RegisterCallback<ClickEvent>(ev =>
+        {
+
+        });
     }
 
     void LoadSentences()
@@ -44,7 +72,8 @@ public class SavedSentencesUIManager : MonoBehaviour, IObserver
 
             item.RegisterCallback<ClickEvent>(e =>
             {
-                sentenceLabel.text = sentence.Value;
+                sentenceSelected = sentence;
+                sentenceLabel.text = sentenceSelected.Value;
             });
         }
     }

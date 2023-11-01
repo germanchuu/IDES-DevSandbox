@@ -16,6 +16,7 @@ VisualElement {
     -unity-font-style: normal;
     color: rgb(178, 178, 178);
     margin-top: 45px;
+    align-items: center;
 }
 
 .text {
@@ -55,4 +56,12 @@ VisualElement {
     background-color: rgb(147, 147, 147);
     height: 15%;
     flex-direction: row;
+}
+
+.btnIcon {
+    flex-grow: 1;
+    width: 70%;
+    background-image: url('project://database/Assets/UI%20Toolkit/UnityThemes/UnityDefaultRuntimeTheme.tss?fileID=7433338533053954386&guid=f8f4435082d588a4790298f117a991bf&type=3#check@2x');
+    -unity-background-scale-mode: scale-to-fit;
+    -unity-background-image-tint-color: rgb(209, 209, 209);
 }

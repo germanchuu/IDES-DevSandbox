@@ -11,7 +11,12 @@ public interface IDataGetable<T>
     T GetData();
 }
 
-public interface IDataHandler<TInsert, TGet> : IDataInsertable<TInsert>, IDataGetable<TGet>
+public interface IDataDeletable<T>
+{
+    void DeleteData(T data);
+}
+
+public interface IDataHandler<TInsert, TGet, TDelete> : IDataInsertable<TInsert>, IDataGetable<TGet>, IDataDeletable<TDelete>
 {
     
 }

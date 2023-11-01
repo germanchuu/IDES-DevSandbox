@@ -377,6 +377,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sentenceAsset: {fileID: 9197481963319205126, guid: 77a6d14b77b72a74ba8cf740994cf853, type: 3}
+  popUpHandler: {fileID: 2065861009}
 --- !u!1 &2030929936
 GameObject:
   m_ObjectHideFlags: 0

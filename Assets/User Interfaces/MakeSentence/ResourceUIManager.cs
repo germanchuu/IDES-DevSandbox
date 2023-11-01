@@ -48,7 +48,8 @@ public class ResourceUIManager : MonoBehaviour, IObserver
         btnSaveSentence = root.Q<Button>("btnSave");
         btnSaveSentence.RegisterCallback<ClickEvent>(e =>
         {            
-            SentenceButtonManager.SaveSentence(lblSentence.text, popUpHandler);            
+            if (!string.IsNullOrEmpty(lblSentence.text))
+                SentenceButtonManager.SaveSentence(lblSentence.text.Trim(), popUpHandler);
         });
     }
 
@@ -98,7 +99,7 @@ public class ResourceUIManager : MonoBehaviour, IObserver
 
             item.RegisterCallback<ClickEvent>(e =>
             {
-                lblSentence.text += ' ' + pictogram.name;                                          
+                lblSentence.text += pictogram.name + ' ';
                 sentenceScroll.scrollOffset = lblSentence.layout.max - sentenceScroll.contentViewport.layout.size;                
             });
         }        

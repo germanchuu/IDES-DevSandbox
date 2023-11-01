@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 
 
-public class SavedSentencesManager : IDataHandler<string, Dictionary<int, string>>
+public class SavedSentencesManager : IDataHandler<string, Dictionary<int, string>, int>
 {
     private readonly string dataFileName = "savedSentences";
     public Dictionary<int, string> sentences;
+
 
     public Dictionary<int, string> GetData()
     {
@@ -22,6 +23,14 @@ public class SavedSentencesManager : IDataHandler<string, Dictionary<int, string
         sentences.Add(nextIndex, data);
         FileAccess.SaveData(sentences, dataFileName);
         
+        sentences = null;
+    }
+    public void DeleteData(int indexData)
+    {
+        sentences = GetData();
+        if (sentences.Remove(indexData))
+            FileAccess.SaveData(sentences, dataFileName);
+
         sentences = null;
     }
 

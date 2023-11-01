@@ -19,13 +19,20 @@ public class SentenceButtonManager
     }
 
     public static void SaveSentence(string sentence, PopUpHandler popUp)
-    {        
-        sentence.Trim();
-
-        popUp.ShowPopUp("Confirmar", $"¿Estás seguro de guardar la oración?\n\n\"{sentence}\"", () =>
+    {               
+        popUp.ShowPopUp("Guardar oración", $"¿Estás seguro de guardar la oración?\n\n\"{sentence}\"", () =>
         {
             SavedSentencesManager manager = new();
             manager.InsertData(sentence);              
         });        
-    }    
+    } 
+    
+    public static void DeleteSavedSentence(KeyValuePair<int, string> sentenceSelected, PopUpHandler popUp)
+    {
+        popUp.ShowPopUp("Eliminar oración", $"¿Estás seguro de eliminar la oración?\n\n\"{sentenceSelected.Value}\"", () =>
+        {
+            SavedSentencesManager manager = new();
+            manager.DeleteData(sentenceSelected.Key);
+        });
+    }
 }

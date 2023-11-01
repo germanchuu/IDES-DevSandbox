@@ -10,8 +10,12 @@
                     <ui:Label tabindex="-1" text="¿Estás seguro de eliminar la oración?" parse-escape-sequences="true" display-tooltip-when-elided="true" name="lblMessage" class="text" />
                 </ui:VisualElement>
                 <ui:VisualElement name="buttonsContainer" style="flex-grow: 1; height: 60%; flex-direction: row; justify-content: space-around; align-items: flex-start; align-self: auto;">
-                    <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" name="btnConfirm" text="✔" class="buttons" style="background-color: rgba(25, 113, 43, 0.81);" />
-                    <ui:Button text="✘" parse-escape-sequences="true" display-tooltip-when-elided="true" name="btnCancel" class="buttons" style="background-color: rgb(161, 68, 68);" />
+                    <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" name="btnConfirm" class="buttons" style="background-color: rgba(25, 113, 43, 0.81);">
+                        <ui:VisualElement name="btnIcon" class="btnIcon" />
+                    </ui:Button>
+                    <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" name="btnCancel" class="buttons" style="background-color: rgb(161, 68, 68);">
+                        <ui:VisualElement name="btnIcon" class="btnIcon" style="background-image: url(&apos;project://database/Assets/UI%20Toolkit/UnityThemes/UnityDefaultRuntimeTheme.tss?fileID=4456449167576933126&amp;guid=f8f4435082d588a4790298f117a991bf&amp;type=3#check-dash@2x&apos;);" />
+                    </ui:Button>
                 </ui:VisualElement>
             </ui:VisualElement>
         </ui:VisualElement>

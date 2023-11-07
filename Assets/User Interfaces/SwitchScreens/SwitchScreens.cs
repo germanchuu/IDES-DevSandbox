@@ -76,13 +76,9 @@ public class SwitchScreens : MonoBehaviour
 
     private void Update()
     {
-        if (Application.platform == RuntimePlatform.Android)
+        if (Input.GetKey(KeyCode.Escape))
         {
-            if (Input.GetKey(KeyCode.Escape))
-            {
-                DisplayScreens(documents[0]);
-            }
-
+            DisplayScreens(documents[0]);
         }
     }
 }

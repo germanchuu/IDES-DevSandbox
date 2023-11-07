@@ -27,12 +27,13 @@ public class SentenceButtonManager
         });        
     } 
     
-    public static void DeleteSavedSentence(KeyValuePair<int, string> sentenceSelected, PopUpHandler popUp)
+    public static void DeleteSavedSentence(KeyValuePair<int, string> sentenceSelected, PopUpHandler popUp, IObserver observer)
     {
         popUp.ShowPopUp("Eliminar oración", $"¿Estás seguro de eliminar la oración?\n\n\"{sentenceSelected.Value}\"", () =>
         {
             SavedSentencesManager manager = new();
             manager.DeleteData(sentenceSelected.Key);
+            observer.Notify();
         });
-    }
+    }    
 }

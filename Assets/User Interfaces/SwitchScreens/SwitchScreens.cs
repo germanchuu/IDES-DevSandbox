@@ -33,7 +33,7 @@ public class SwitchScreens : MonoBehaviour
 
         btnMakeSentence.RegisterCallback<ClickEvent, UIDocument>(SwitchScreen, documents[1]);
         btnSaveSentence.RegisterCallback<ClickEvent, UIDocument>(SwitchScreen, documents[2]);
-        //btnDefaultSentence.RegisterCallback<ClickEvent, UIDocument>(SwitchScreen, documents[3]);
+        btnDefaultSentence.RegisterCallback<ClickEvent, UIDocument>(SwitchScreen, documents[3]);
         //btnMap.RegisterCallback<ClickEvent, UIDocument>(SwitchScreen, documents[4]);
     }
 
@@ -77,12 +77,13 @@ public class SwitchScreens : MonoBehaviour
     private void Update()
     {
         if (Application.platform == RuntimePlatform.Android)
-        {
-            if (Input.GetKey(KeyCode.Escape))
-            {
-                DisplayScreens(documents[0]);
-            }
+        {            
 
+        }
+
+        if (Input.GetKey(KeyCode.Escape))
+        {
+            DisplayScreens(documents[0]);
         }
     }
 }

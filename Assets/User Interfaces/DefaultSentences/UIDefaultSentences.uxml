@@ -1,0 +1,25 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/User%20Interfaces/DefaultSentences/StylesDefaultSentences.uss?fileID=7433441132597879392&amp;guid=09b9285becce9ad4fa7a1fcf3a7bce95&amp;type=3#StylesDefaultSentences" />
+    <ui:VisualElement name="container" style="flex-grow: 1; width: 100%; height: 100%; background-color: rgb(255, 255, 255);">
+        <ui:VisualElement name="sentenceContainer" style="flex-grow: 1; height: 15%;">
+            <ui:VisualElement name="border" style="flex-grow: 1; border-top-left-radius: 35px; border-top-right-radius: 35px; border-bottom-right-radius: 35px; border-bottom-left-radius: 35px; border-left-color: rgb(166, 166, 166); border-right-color: rgb(166, 166, 166); border-top-color: rgb(166, 166, 166); border-bottom-color: rgb(166, 166, 166); border-top-width: 3px; border-right-width: 3px; border-bottom-width: 3px; border-left-width: 3px; margin-top: 10px; margin-right: 10px; margin-bottom: 10px; margin-left: 10px; justify-content: center; align-items: flex-start; padding-top: 15px; padding-right: 15px; padding-bottom: 15px; padding-left: 15px; overflow: hidden;">
+                <ui:ScrollView scroll-deceleration-rate="0,135" elasticity="0,1" mode="Horizontal" horizontal-scroller-visibility="Hidden">
+                    <ui:Label tabindex="-1" parse-escape-sequences="true" display-tooltip-when-elided="true" name="lblSentence" style="font-size: 71px; color: rgb(91, 91, 91); text-shadow: 2px 1.9px 3.1px rgba(0, 0, 0, 0.21); width: 100%;" />
+                </ui:ScrollView>
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:VisualElement name="bodyContainer" style="flex-grow: 1; height: 80%; flex-direction: row;">
+            <ui:ScrollView scroll-deceleration-rate="0,135" elasticity="0,1" name="scrollSentences" style="width: 65%;" />
+            <ui:VisualElement name="buttonsContainer" style="flex-grow: 1; width: 35%; height: auto; flex-direction: column; justify-content: flex-start; align-items: stretch; align-self: auto; margin-top: 15px; margin-right: 15px; margin-bottom: 15px; margin-left: 15px;">
+                <ui:VisualElement name="containerListen" style="flex-grow: 1; width: auto; justify-content: space-around; height: 33%;">
+                    <ui:Button text="&#10;" parse-escape-sequences="true" display-tooltip-when-elided="true" name="btnListen" class="button">
+                        <ui:VisualElement name="buttonDistribution" class="buttonDistribution">
+                            <ui:VisualElement name="icon" class="buttonIcon" style="background-image: url(&apos;project://database/Assets/User%20Interfaces/MakeSentence/Elements/Listen.png?fileID=2800000&amp;guid=772ca2e5d2b99dd478b678ecbf80400f&amp;type=3#Listen&apos;);" />
+                            <ui:Label tabindex="-1" text="Escuchar" parse-escape-sequences="true" display-tooltip-when-elided="true" class="buttonText" />
+                        </ui:VisualElement>
+                    </ui:Button>
+                </ui:VisualElement>
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

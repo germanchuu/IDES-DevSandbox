@@ -1,4 +1,4 @@
-Library: D:\Universidad\8vo Semestre\Proyecto de Grado\IDES-DevSandbox\Temp\BurstOutput\tempburstlibs\armeabi-v7a\lib_burst_generated
+Library: D:\Proyecto de Grado\Proyectos\IDES-DevSandbox\Temp\BurstOutput\tempburstlibs\armeabi-v7a\lib_burst_generated
 --platform=Android
 --backend=burst-llvm-15
 --target=ARMV7A_NEON32
@@ -51,10 +51,10 @@ Library: D:\Universidad\8vo Semestre\Proyecto de Grado\IDES-DevSandbox\Temp\Burs
 --assembly-defines=System;
 --assembly-defines=mscorlib;
 --generate-link-xml=Temp\burst.link.xml
---temp-folder=D:\Universidad\8vo Semestre\Proyecto de Grado\IDES-DevSandbox\Temp\Burst
+--temp-folder=D:\Proyecto de Grado\Proyectos\IDES-DevSandbox\Temp\Burst
 --key-folder=C:/Program Files/Unity/Hub/Editor/2022.3.7f1/Editor/Data/PlaybackEngines/AndroidPlayer
---decode-folder=D:\Universidad\8vo Semestre\Proyecto de Grado\IDES-DevSandbox\Library\Burst
---output=D:\Universidad\8vo Semestre\Proyecto de Grado\IDES-DevSandbox\Temp\BurstOutput\tempburstlibs\armeabi-v7a\lib_burst_generated
+--decode-folder=D:\Proyecto de Grado\Proyectos\IDES-DevSandbox\Library\Burst
+--output=D:\Proyecto de Grado\Proyectos\IDES-DevSandbox\Temp\BurstOutput\tempburstlibs\armeabi-v7a\lib_burst_generated
 --pdb-search-paths=Temp/ManagedSymbols/
 
 --method=Unity.Burst.BurstCompiler+BurstCompilerHelper, Unity.Burst, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null::IsBurstEnabled()--8c2be93e18276203cbd918daa2748a10

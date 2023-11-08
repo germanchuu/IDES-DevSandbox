@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 
 
-public class SavedSentencesManager : IDataHandler<string, Dictionary<int, string>, int>
+public class SavedSentencesManager : IDataHandler<string, Dictionary<int, string>, int, KeyValuePair<int, string>>
 {
     private readonly string dataFileName = "savedSentences";
     public Dictionary<int, string> sentences;
@@ -32,6 +32,10 @@ public class SavedSentencesManager : IDataHandler<string, Dictionary<int, string
             FileAccess.SaveData(sentences, dataFileName);
 
         sentences = null;
+    }
+    public void UpdateData(KeyValuePair<int, string> data)
+    {
+        
     }
 
     private int GetLastIndex()

@@ -18,6 +18,7 @@ public class SwitchScreens : MonoBehaviour
     Button btnSaveSentence;
     Button btnDefaultSentence;
     Button btnMap;
+    Button btnConfig;
 
     void OnEnable()
     {
@@ -30,11 +31,13 @@ public class SwitchScreens : MonoBehaviour
         btnSaveSentence = root.Q<Button>("btnSaveSentence");
         btnDefaultSentence = root.Q<Button>("btnDefaultSentence");
         btnMap = root.Q<Button>("btnMap");
+        btnConfig = root.Q<Button>("btnConfig");
 
         btnMakeSentence.RegisterCallback<ClickEvent, UIDocument>(SwitchScreen, documents[1]);
         btnSaveSentence.RegisterCallback<ClickEvent, UIDocument>(SwitchScreen, documents[2]);
         btnDefaultSentence.RegisterCallback<ClickEvent, UIDocument>(SwitchScreen, documents[3]);
         //btnMap.RegisterCallback<ClickEvent, UIDocument>(SwitchScreen, documents[4]);
+        btnConfig.RegisterCallback<ClickEvent, UIDocument>(SwitchScreen, documents[5]);
     }
 
     private List<UIDocument> GetUIDocuments()
@@ -76,11 +79,6 @@ public class SwitchScreens : MonoBehaviour
 
     private void Update()
     {
-        if (Application.platform == RuntimePlatform.Android)
-        {            
-
-        }
-
         if (Input.GetKey(KeyCode.Escape))
         {
             DisplayScreens(documents[0]);

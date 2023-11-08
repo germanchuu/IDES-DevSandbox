@@ -15,7 +15,6 @@ public class SavedSentencesUIManager : MonoBehaviour, IObserver
     ScrollView sentencesScroll;
     Label sentenceLabel;
 
-    Button btnRewrite;
     Button btnDelete;
     Button btnListen;
 
@@ -33,21 +32,14 @@ public class SavedSentencesUIManager : MonoBehaviour, IObserver
         VisualElement root = savedSentences.rootVisualElement;
         sentencesScroll = root.Q<ScrollView>("scrollSentences");
         sentenceLabel = root.Q<Label>("lblSentence");
-        btnRewrite = root.Q<Button>("btnRewrite");
         btnDelete = root.Q<Button>("btnDelete");
         btnListen = root.Q<Button>("btnListen");
-
-        btnRewrite.RegisterCallback<ClickEvent>(ev =>
-        {
-            
-        });
 
         btnDelete.RegisterCallback<ClickEvent>(ev => 
         {
             if (savedSentences != null)
             {
-                SentenceButtonManager.DeleteSavedSentence(sentenceSelected, popUpHandler);
-                Notify();
+                SentenceButtonManager.DeleteSavedSentence(sentenceSelected, popUpHandler, this);
             }
         });
 
@@ -64,7 +56,7 @@ public class SavedSentencesUIManager : MonoBehaviour, IObserver
 
         if (sentences == null)
             return;
-
+        
         foreach (var sentence in sentences)
         {
             TemplateContainer item = SetSentenceTemplate(sentenceAsset.Instantiate(), sentence.Value);
@@ -74,8 +66,9 @@ public class SavedSentencesUIManager : MonoBehaviour, IObserver
             {
                 sentenceSelected = sentence;
                 sentenceLabel.text = sentenceSelected.Value;
+                Debug.Log($"{sentenceSelected.Key} - {sentenceSelected.Value}");
             });
-        }
+        }        
     }
 
     TemplateContainer SetSentenceTemplate(TemplateContainer item, string sentence)

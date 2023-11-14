@@ -18,7 +18,7 @@ public class PopUpQuickAccessHandler : MonoBehaviour
     private int selectedSentence = -1;
     private string sentenceToChange;
 
-    void Start()
+    void Awake()
     {        
         manager = new QuickAccessManager();
         InsertInitialData();

@@ -23,10 +23,7 @@ public class MainMenuUIManager : MonoBehaviour, IObserver
     {
         QuickAccessManager quickAccessManager = new();
         string[] quickAccesSentences = quickAccessManager.GetData();
-        quickAccessbuttons = new Button[3];
-
-        if (quickAccesSentences == null)
-            InitializateQuickAccess();
+        quickAccessbuttons = new Button[3];        
 
         for (int i = 0; i < quickAccessbuttons.Length; i++)
         {

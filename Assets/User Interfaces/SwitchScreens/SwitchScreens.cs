@@ -9,7 +9,9 @@ using UnityEngine.UIElements;
 public class SwitchScreens : MonoBehaviour
 {
     [SerializeField] List<GameObject> gameObjects;
-    
+    [SerializeField] PopUpHandler popUp;
+    [SerializeField] PopUpQuickAccessHandler popUpQuickAcces;
+
     List<UIDocument> documents;    
     UIDocument menu;
 
@@ -82,6 +84,12 @@ public class SwitchScreens : MonoBehaviour
         if (Input.GetKey(KeyCode.Escape))
         {
             DisplayScreens(documents[0]);
+
+            GameObject gameObject = gameObjects[0];
+            IObserver observer = gameObject.GetComponent<IObserver>();
+            observer?.Notify();
+            popUp.HidePopUp();
+            popUpQuickAcces.HidePopUp();
         }
     }
 }

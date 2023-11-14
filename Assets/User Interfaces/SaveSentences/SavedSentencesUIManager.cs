@@ -1,3 +1,4 @@
+using LeastSquares.Overtone;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,7 +8,9 @@ public class SavedSentencesUIManager : MonoBehaviour, IObserver
 {
     public VisualTreeAsset sentenceAsset;
     public PopUpHandler popUpHandler;
-    
+    public PopUpQuickAccessHandler quickAccessPopUp;
+    public TTSPlayer tSPlayer;
+
     SavedSentencesManager manager;
     KeyValuePair<int, string> sentenceSelected;
 
@@ -17,6 +20,7 @@ public class SavedSentencesUIManager : MonoBehaviour, IObserver
 
     Button btnDelete;
     Button btnListen;
+    Button btnQuickAccess;
 
     private void Awake()
     {
@@ -34,18 +38,24 @@ public class SavedSentencesUIManager : MonoBehaviour, IObserver
         sentenceLabel = root.Q<Label>("lblSentence");
         btnDelete = root.Q<Button>("btnDelete");
         btnListen = root.Q<Button>("btnListen");
+        btnQuickAccess = root.Q<Button>("btnQuick");
 
         btnDelete.RegisterCallback<ClickEvent>(ev => 
         {
-            if (savedSentences != null)
-            {
-                SentenceButtonManager.DeleteSavedSentence(sentenceSelected, popUpHandler, this);
-            }
+            if (!string.IsNullOrEmpty(sentenceLabel.text))
+                ButtonManager.DeleteSavedSentence(sentenceSelected, popUpHandler, this);            
         });
 
         btnListen.RegisterCallback<ClickEvent>(ev =>
         {
+            if (!string.IsNullOrEmpty(sentenceLabel.text))
+                ButtonManager.TextToSpeech(sentenceSelected.Value, tSPlayer);
+        });
 
+        btnQuickAccess.RegisterCallback<ClickEvent>(ev =>
+        {
+            if (!string.IsNullOrEmpty(sentenceLabel.text))
+                ButtonManager.UpdateQuickAcces(sentenceSelected.Value.Trim(), quickAccessPopUp);
         });
     }
 
@@ -65,8 +75,7 @@ public class SavedSentencesUIManager : MonoBehaviour, IObserver
             item.RegisterCallback<ClickEvent>(e =>
             {
                 sentenceSelected = sentence;
-                sentenceLabel.text = sentenceSelected.Value;
-                Debug.Log($"{sentenceSelected.Key} - {sentenceSelected.Value}");
+                sentenceLabel.text = sentenceSelected.Value;                
             });
         }        
     }

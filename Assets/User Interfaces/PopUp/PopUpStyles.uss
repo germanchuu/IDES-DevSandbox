@@ -15,8 +15,11 @@ VisualElement {
     font-size: 60px;
     -unity-font-style: normal;
     color: rgb(178, 178, 178);
-    margin-top: 45px;
+    margin-top: 0;
     align-items: center;
+    margin-right: 0;
+    margin-bottom: 0;
+    margin-left: 0;
 }
 
 .text {

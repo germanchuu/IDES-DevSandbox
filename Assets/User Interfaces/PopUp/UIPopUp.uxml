@@ -9,7 +9,7 @@
                 <ui:VisualElement name="textContainer" style="flex-grow: 1; height: 40%; align-items: center;">
                     <ui:Label tabindex="-1" text="¿Estás seguro de eliminar la oración?" parse-escape-sequences="true" display-tooltip-when-elided="true" name="lblMessage" class="text" />
                 </ui:VisualElement>
-                <ui:VisualElement name="buttonsContainer" style="flex-grow: 1; height: 60%; flex-direction: row; justify-content: space-around; align-items: flex-start; align-self: auto;">
+                <ui:VisualElement name="buttonsContainer" style="flex-grow: 1; height: 60%; flex-direction: row; justify-content: space-around; align-items: center; align-self: auto;">
                     <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" name="btnConfirm" class="buttons" style="background-color: rgba(25, 113, 43, 0.81);">
                         <ui:VisualElement name="btnIcon" class="btnIcon" />
                     </ui:Button>

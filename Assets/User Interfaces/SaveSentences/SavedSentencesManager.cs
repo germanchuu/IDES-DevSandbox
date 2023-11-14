@@ -8,7 +8,6 @@ public class SavedSentencesManager : IDataHandler<string, Dictionary<int, string
     private readonly string dataFileName = "savedSentences";
     public Dictionary<int, string> sentences;
 
-
     public Dictionary<int, string> GetData()
     {
         return FileAccess.GetData<Dictionary<int, string>>(dataFileName);

@@ -1,10 +1,18 @@
+using LeastSquares.Overtone;
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SentenceButtonManager
+public class ButtonManager
 {
+
+
+    public async static void TextToSpeech(string text, TTSPlayer tSPlayer)
+    {
+        await tSPlayer.Speak(text);
+    }
+
     public static string DeleteLastWord(string sentence)
     {
         string[] words = sentence.Split(' ');
@@ -36,4 +44,9 @@ public class SentenceButtonManager
             observer.Notify();
         });
     }    
+
+    public static void UpdateQuickAcces(string sentence, PopUpQuickAccessHandler popUp)
+    {        
+        popUp.ShowPopUp($"Cambiar \"{sentence}\" por:", sentence);
+    }
 }

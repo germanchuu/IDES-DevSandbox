@@ -1,3 +1,4 @@
+using LeastSquares.Overtone;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -10,7 +11,8 @@ public class ResourceUIManager : MonoBehaviour, IObserver
     public VisualTreeAsset themeAsset;
     public VisualTreeAsset pictogramAsset;
     public PopUpHandler popUpHandler;
-    
+    public TTSPlayer tSPlayer;
+
     private UIDocument makeSentence;
     private ScrollView pictogramsScroll;
     private ScrollView categoriesScroll;
@@ -42,14 +44,21 @@ public class ResourceUIManager : MonoBehaviour, IObserver
         btnDelete = root.Q<Button>("btnDelete");
         btnDelete.RegisterCallback<ClickEvent>(e =>
         {            
-            lblSentence.text = SentenceButtonManager.DeleteLastWord(lblSentence.text);
+            lblSentence.text = ButtonManager.DeleteLastWord(lblSentence.text.Trim());
         });
 
         btnSaveSentence = root.Q<Button>("btnSave");
         btnSaveSentence.RegisterCallback<ClickEvent>(e =>
         {            
             if (!string.IsNullOrEmpty(lblSentence.text))
-                SentenceButtonManager.SaveSentence(lblSentence.text.Trim(), popUpHandler);
+                ButtonManager.SaveSentence(lblSentence.text.Trim(), popUpHandler);
+        });
+
+        btnListenSentence = root.Q<Button>("btnListen");
+        btnListenSentence.RegisterCallback<ClickEvent>(e =>
+        {
+            if (!string.IsNullOrEmpty(lblSentence.text))
+                ButtonManager.TextToSpeech(lblSentence.text.Trim(), tSPlayer);
         });
     }
 
@@ -100,7 +109,8 @@ public class ResourceUIManager : MonoBehaviour, IObserver
             item.RegisterCallback<ClickEvent>(e =>
             {
                 lblSentence.text += pictogram.name + ' ';
-                sentenceScroll.scrollOffset = lblSentence.layout.max - sentenceScroll.contentViewport.layout.size;                
+                sentenceScroll.scrollOffset = lblSentence.layout.max - sentenceScroll.contentViewport.layout.size;
+                ButtonManager.TextToSpeech(pictogram.name, tSPlayer);
             });
         }        
     }    

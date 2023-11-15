@@ -11,12 +11,21 @@ public class MainMenuUIManager : MonoBehaviour, IObserver
     VisualElement root;
 
     private Button[] quickAccessbuttons = new Button[3];
-    void Start()
+    Label lblUser;
+    void Awake()
     {
         mainMenuDocument = GetComponent<UIDocument>();
         root = mainMenuDocument.rootVisualElement;
+        lblUser = root.Q<Label>("lblUser");
 
+        LoadComponentes();
         InitializateQuickAccess();
+    }
+
+    private void LoadComponentes()
+    {
+        tSPlayer.Voice.speakerId = Configuration.GetGlobalConfiguration().ttsVoice;
+        lblUser.text = Configuration.GetGlobalConfiguration().name.ToUpper();
     }
 
     private void InitializateQuickAccess()
@@ -44,5 +53,6 @@ public class MainMenuUIManager : MonoBehaviour, IObserver
     public void Notify()
     {
         InitializateQuickAccess();
+        LoadComponentes();
     }
 }

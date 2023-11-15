@@ -1,1 +1,51 @@
-VisualElement {}
+VisualElement {
+}
+
+TextInput {
+    background-color: rgba(255, 255, 255, 0);
+    border-left-color: rgba(0, 0, 0, 0);
+    border-right-color: rgba(0, 0, 0, 0);
+    border-top-color: rgba(0, 0, 0, 0);
+    border-bottom-color: rgba(0, 0, 0, 0);
+}
+
+IntegerInput {
+    background-color: rgba(255, 255, 255, 0);
+    border-left-color: rgba(0, 0, 0, 0);
+    border-right-color: rgba(0, 0, 0, 0);
+    border-top-color: rgba(0, 0, 0, 0);
+    border-bottom-color: rgba(0, 0, 0, 0);
+}
+
+.textField {
+    font-size: 30px;
+    -unity-font-style: normal;
+    border-top-width: 3px;
+    border-right-width: 3px;
+    border-bottom-width: 3px;
+    border-left-width: 3px;
+    border-left-color: rgb(101, 101, 101);
+    border-right-color: rgb(101, 101, 101);
+    border-top-color: rgb(101, 101, 101);
+    border-bottom-color: rgb(101, 101, 101);
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    border-bottom-left-radius: 15px;
+    opacity: 1;
+    background-color: rgba(255, 255, 255, 0);
+}
+
+.labelInput {
+    font-size: 30px;
+    -unity-font-style: bold;
+    color: rgb(53, 53, 53);
+}
+
+DropdownField > VisualElement {
+    background-color: rgba(255, 255, 255, 0);
+    border-left-color: rgba(0, 0, 0, 0);
+    border-right-color: rgba(0, 0, 0, 0);
+    border-top-color: rgba(0, 0, 0, 0);
+    border-bottom-color: rgba(0, 0, 0, 0);
+}

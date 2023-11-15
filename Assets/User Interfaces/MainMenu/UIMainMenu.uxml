@@ -7,7 +7,7 @@
                     <ui:Label tabindex="-1" text="HOLA" parse-escape-sequences="true" display-tooltip-when-elided="true" name="hello" class="hello" />
                 </ui:VisualElement>
                 <ui:VisualElement name="helloStringContainer" class="helloStringContainer">
-                    <ui:Label tabindex="-1" text="USUARIO" parse-escape-sequences="true" display-tooltip-when-elided="true" name="user" class="user" />
+                    <ui:Label tabindex="-1" text="USUARIO" parse-escape-sequences="true" display-tooltip-when-elided="true" name="lblUser" class="user" />
                 </ui:VisualElement>
             </ui:VisualElement>
             <ui:VisualElement name="quickAcces" style="flex-grow: 1; height: 40%; width: 94%;">

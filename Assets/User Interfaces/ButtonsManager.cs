@@ -6,8 +6,6 @@ using UnityEngine;
 
 public class ButtonManager
 {
-
-
     public async static void TextToSpeech(string text, TTSPlayer tSPlayer)
     {
         await tSPlayer.Speak(text);
@@ -48,5 +46,15 @@ public class ButtonManager
     public static void UpdateQuickAcces(string sentence, PopUpQuickAccessHandler popUp)
     {        
         popUp.ShowPopUp($"Cambiar \"{sentence}\" por:", sentence);
+    }
+
+    public static void UpdateConfiguration(Configuration config, Action method, PopUpHandler popUp)
+    {
+        popUp.ShowPopUp("¿Confirmar cambios?", "Asegurese de que sus cambios son correctos.", () =>
+        {
+            ConfigurationManager manager = new();
+            manager.UpdateData(config);
+            method?.Invoke();
+        });
     }
 }

@@ -337,6 +337,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tSPlayer: {fileID: 1647570468}
+  configDocument: {fileID: 1277652038}
 --- !u!1 &1132637477
 GameObject:
   m_ObjectHideFlags: 0
@@ -524,6 +525,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tSPlayer: {fileID: 1647570468}
+  popUp: {fileID: 2065861009}
 --- !u!1 &1425422088
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,4 +1,5 @@
 using LeastSquares.Overtone;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,7 +7,8 @@ using UnityEngine.UIElements;
 
 public class ConfigurationUIManager : MonoBehaviour, IObserver
 {
-    public TTSPlayer tSPlayer;
+    [SerializeField] TTSPlayer tSPlayer;
+    [SerializeField] PopUpHandler popUp;
 
     ConfigurationManager manager;
     Configuration config;
@@ -18,8 +20,10 @@ public class ConfigurationUIManager : MonoBehaviour, IObserver
     IntegerField txtPhoneNumber;
     IntegerField txtEmergencyContact;
     DropdownField cmbVoice;
+    Label lblTittle;
+    Button btnPlayVoice;
 
-    void Start()
+    void Awake()
     {
         InicializateInputs();
     }        
@@ -35,22 +39,31 @@ public class ConfigurationUIManager : MonoBehaviour, IObserver
         txtPhoneNumber = root.Q<IntegerField>("txtPhoneNumber");
         txtEmergencyContact = root.Q<IntegerField>("txtEmergencyContact");
         cmbVoice = root.Q<DropdownField>("cmbVoice");
-
+        lblTittle = root.Q<Label>("lblTittle");
+        btnPlayVoice = root.Q<Button>("btnPlayVoice");
+        
+        cmbVoice.UnregisterValueChangedCallback(ChangeTTSVoice);
         cmbVoice.choices.Clear();
         cmbVoice.choices.Add("Varón");
         cmbVoice.choices.Add("Mujer");
         cmbVoice.RegisterValueChangedCallback(ChangeTTSVoice);
+
+        btnPlayVoice.UnregisterCallback<ClickEvent>(ListenVoice);
+        btnPlayVoice.RegisterCallback<ClickEvent>(ListenVoice);
     }
 
     private void LoadInputs()
-    {
+    {        
         config = manager.GetData();
 
         if (config == null)
         {
+            lblTittle.text = "REGISTRO INICIAL";
             InsertInitialData();
             config = manager.GetData();
         }
+        else
+            lblTittle.text = "CONFIGURACION";
 
         txtName.value = config.name;
         txtLastName.value = config.lastName;
@@ -62,14 +75,15 @@ public class ConfigurationUIManager : MonoBehaviour, IObserver
 
     private void InsertInitialData()
     {
-        config = new Configuration();
-
-        config.name = "Nombre...";
-        config.lastName = "Apellidos...";
-        config.age = 20;
-        config.phoneNumber = "70708080";
-        config.emergencyContact = "70709090";
-        config.ttsVoice = 0;
+        config = new Configuration()
+        {
+            name = "...",
+            lastName = "...",
+            age = 0,
+            phoneNumber = "0000",
+            emergencyContact = "0000",
+            ttsVoice = 0
+        };        
 
         manager.InsertData(config);
     }
@@ -82,14 +96,31 @@ public class ConfigurationUIManager : MonoBehaviour, IObserver
             tSPlayer.Voice.speakerId = 1;
         else
             tSPlayer.Voice.speakerId = 0;
+    }
 
-        config.ttsVoice = cmbVoice.index;
-        manager.UpdateData(config);
+    private void ListenVoice(ClickEvent evt)
+    {
         ButtonManager.TextToSpeech("Esta es mi voz. Buenas tardes.", tSPlayer);
+    }
+
+    public void UpdateConfigData(Action method)
+    {
+        config = new Configuration()
+        {
+            name = txtName.value,
+            lastName = txtLastName.value,
+            age = txtAge.value,
+            phoneNumber = txtPhoneNumber.value.ToString(),
+            emergencyContact = txtEmergencyContact.value.ToString(),
+            ttsVoice = cmbVoice.index
+        };
+
+        ButtonManager.UpdateConfiguration(config, method, popUp);
     }
 
     public void Notify()
     {
+        InicializateInputs();
         LoadInputs();
     }
 }

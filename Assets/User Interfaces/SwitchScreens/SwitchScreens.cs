@@ -22,7 +22,7 @@ public class SwitchScreens : MonoBehaviour
     Button btnMap;
     Button btnConfig;
 
-    void OnEnable()
+    void Awake()
     {
         documents = GetUIDocuments();        
 
@@ -68,6 +68,19 @@ public class SwitchScreens : MonoBehaviour
         }
     }
 
+    public void SwitchScreen(UIDocument uIDocument)
+    {
+        DisplayScreens(uIDocument);
+
+        int documentIndex = documents.IndexOf(uIDocument);
+        if (documentIndex > 0 && documentIndex < gameObjects.Count)
+        {
+            GameObject gameObject = gameObjects[documentIndex];
+            IObserver observer = gameObject.GetComponent<IObserver>();
+            observer?.Notify();
+        }
+    }
+
     void DisplayScreens(UIDocument uIDocument)
     {
         foreach (UIDocument document in documents)
@@ -83,13 +96,26 @@ public class SwitchScreens : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.Escape))
         {
-            DisplayScreens(documents[0]);
+            if (documents[5].rootVisualElement.style.display == DisplayStyle.Flex)
+            {
+                GameObject gameObject = gameObjects[5];
+                ConfigurationUIManager configurationUI = gameObject.GetComponent<ConfigurationUIManager>();
+                configurationUI?.UpdateConfigData(ShowMainMenu);                
+                return;
+            }
 
-            GameObject gameObject = gameObjects[0];
-            IObserver observer = gameObject.GetComponent<IObserver>();
-            observer?.Notify();
-            popUp.HidePopUp();
-            popUpQuickAcces.HidePopUp();
+            ShowMainMenu();
         }
+    }
+
+    public void ShowMainMenu()
+    {
+        DisplayScreens(documents[0]);
+
+        GameObject gameObject = gameObjects[0];
+        IObserver observer = gameObject.GetComponent<IObserver>();
+        observer?.Notify();
+        popUp.HidePopUp();
+        popUpQuickAcces.HidePopUp();
     }
 }

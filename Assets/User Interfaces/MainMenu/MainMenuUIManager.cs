@@ -5,7 +5,9 @@ using UnityEngine.UIElements;
 
 public class MainMenuUIManager : MonoBehaviour, IObserver
 {
-    public TTSPlayer tSPlayer;
+    [SerializeField] TTSPlayer tSPlayer;
+    [SerializeField] UIDocument configDocument;
+    SwitchScreens switchScreens;
 
     private UIDocument mainMenuDocument;
     VisualElement root;
@@ -14,6 +16,7 @@ public class MainMenuUIManager : MonoBehaviour, IObserver
     Label lblUser;
     void Awake()
     {
+        switchScreens = GetComponentInParent<SwitchScreens>();
         mainMenuDocument = GetComponent<UIDocument>();
         root = mainMenuDocument.rootVisualElement;
         lblUser = root.Q<Label>("lblUser");
@@ -24,8 +27,15 @@ public class MainMenuUIManager : MonoBehaviour, IObserver
 
     private void LoadComponentes()
     {
-        tSPlayer.Voice.speakerId = Configuration.GetGlobalConfiguration().ttsVoice;
-        lblUser.text = Configuration.GetGlobalConfiguration().name.ToUpper();
+        Configuration config = Configuration.GetGlobalConfiguration();
+        if (config == null ) 
+        {
+            switchScreens.SwitchScreen(configDocument);
+            return;
+        }
+
+        tSPlayer.Voice.speakerId = config.ttsVoice;
+        lblUser.text = config.name.ToUpper();
     }
 
     private void InitializateQuickAccess()

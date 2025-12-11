@@ -1,0 +1,9 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/User%20Interfaces/MakeSentence/SuggestedWord/StyleSheetSuggestedWord.uss?fileID=7433441132597879392&amp;guid=1254a7f36cb8a8248bde3ce5db11e676&amp;type=3#StyleSheetSuggestedWord" />
+    <ui:VisualElement name="suggestedWord" class="suggestedWord">
+        <ui:VisualElement name="distribution" style="flex-grow: 1; flex-direction: row; padding-top: 10px; padding-right: 10px; padding-bottom: 10px; padding-left: 10px;">
+            <ui:Label tabindex="-1" text="Palabra Sugerida 1" parse-escape-sequences="true" display-tooltip-when-elided="true" name="lblWord" class="suggestedWordText" />
+            <ui:VisualElement name="icon" class="suggestedWordIcon" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

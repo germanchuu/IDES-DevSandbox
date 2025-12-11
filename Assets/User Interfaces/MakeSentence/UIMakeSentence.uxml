@@ -12,7 +12,7 @@
             <ui:VisualElement name="containerSave" style="flex-grow: 1; width: 33%; justify-content: space-around; align-items: stretch; align-self: auto;">
                 <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" name="btnSave" class="button">
                     <ui:VisualElement name="buttonDistribution" class="buttonDistribution">
-                        <ui:VisualElement name="icon" class="buttonIcon" style="background-image: url(&apos;project://database/Assets/User%20Interfaces/MakeSentence/Elements/SaveSentence.png?fileID=2800000&amp;guid=25c3350d68acaa84497b6da22660df8e&amp;type=3#SaveSentence&apos;);" />
+                        <ui:VisualElement name="icon" class="buttonIcon" style="background-image: url(&apos;project://database/Assets/User%20Interfaces/Resources/SaveSentence.png?fileID=2800000&amp;guid=25c3350d68acaa84497b6da22660df8e&amp;type=3#SaveSentence&apos;);" />
                         <ui:Label tabindex="-1" text="Guardar" parse-escape-sequences="true" display-tooltip-when-elided="true" class="buttonText" />
                     </ui:VisualElement>
                 </ui:Button>
@@ -20,7 +20,7 @@
             <ui:VisualElement name="containerListen" style="flex-grow: 1; width: 33%;">
                 <ui:Button text="&#10;" parse-escape-sequences="true" display-tooltip-when-elided="true" name="btnListen" class="button">
                     <ui:VisualElement name="buttonDistribution" class="buttonDistribution">
-                        <ui:VisualElement name="icon" class="buttonIcon" style="background-image: url(&apos;project://database/Assets/User%20Interfaces/MakeSentence/Elements/Listen.png?fileID=2800000&amp;guid=772ca2e5d2b99dd478b678ecbf80400f&amp;type=3#Listen&apos;);" />
+                        <ui:VisualElement name="icon" class="buttonIcon" style="background-image: url(&apos;project://database/Assets/User%20Interfaces/Resources/Listen.png?fileID=2800000&amp;guid=772ca2e5d2b99dd478b678ecbf80400f&amp;type=3#Listen&apos;);" />
                         <ui:Label tabindex="-1" text="Escuchar" parse-escape-sequences="true" display-tooltip-when-elided="true" class="buttonText" />
                     </ui:VisualElement>
                 </ui:Button>
@@ -28,7 +28,7 @@
             <ui:VisualElement name="containerDelete" style="flex-grow: 1; width: 33%;">
                 <ui:Button text="&#10;" parse-escape-sequences="true" display-tooltip-when-elided="true" name="btnDelete" class="button">
                     <ui:VisualElement name="buttonDistribution" class="buttonDistribution">
-                        <ui:VisualElement name="icon" class="buttonIcon" style="background-image: url(&apos;project://database/Assets/User%20Interfaces/MakeSentence/Elements/Delete.png?fileID=2800000&amp;guid=f37f0f9af0bea0b479cb3789977178dc&amp;type=3#Delete&apos;);" />
+                        <ui:VisualElement name="icon" class="buttonIcon" style="background-image: url(&apos;project://database/Assets/User%20Interfaces/Resources/Delete.png?fileID=2800000&amp;guid=f37f0f9af0bea0b479cb3789977178dc&amp;type=3#Delete&apos;);" />
                         <ui:Label tabindex="-1" text="Borrar" parse-escape-sequences="true" display-tooltip-when-elided="true" class="buttonText" />
                     </ui:VisualElement>
                 </ui:Button>
@@ -36,7 +36,7 @@
         </ui:VisualElement>
         <ui:VisualElement name="makerContainer" style="flex-grow: 1; height: 70%; padding-top: 15px; padding-right: 0; padding-bottom: 0; padding-left: 15px; flex-direction: row;">
             <ui:VisualElement name="suggestedWordsContainer" style="flex-grow: 1; width: 30%; align-self: auto; justify-content: flex-start; align-items: stretch; padding-right: 13px;">
-                <ui:VisualElement name="suggestedWord" class="suggestedWord">
+                <ui:VisualElement name="suggestedWord" class="suggestedWord" style="height: 20%; width: 540px;">
                     <ui:VisualElement name="distribution" style="flex-grow: 1; flex-direction: row; padding-top: 10px; padding-right: 10px; padding-bottom: 10px; padding-left: 10px;">
                         <ui:Label tabindex="-1" text="Palabra Sugerida 1" parse-escape-sequences="true" display-tooltip-when-elided="true" class="suggestedWordText" />
                         <ui:VisualElement name="icon" class="suggestedWordIcon" />

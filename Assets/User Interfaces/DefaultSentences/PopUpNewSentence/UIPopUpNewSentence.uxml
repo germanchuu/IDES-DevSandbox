@@ -1,0 +1,24 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/User%20Interfaces/MainMenu/PopUpQuickAcces/PopUpQuickAccessStyles.uss?fileID=7433441132597879392&amp;guid=7b0b5d2509bf34b4597023ba9fe45281&amp;type=3#PopUpQuickAccessStyles" />
+    <ui:VisualElement name="background" class="background">
+        <ui:VisualElement name="popUp" class="popUp" style="background-color: rgb(209, 209, 209);">
+            <ui:VisualElement name="nav" class="nav" style="background-color: rgb(161, 161, 161);">
+                <ui:Label tabindex="-1" text="Añadir nueva oración predefinida" parse-escape-sequences="true" display-tooltip-when-elided="true" name="lblTitle" class="text" style="-unity-text-align: middle-left; height: 100%; width: 100%; font-size: 45px; color: rgb(58, 58, 58); -unity-font-style: bold; margin-left: 0; margin-top: 0; margin-bottom: 0; margin-right: 0; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 50px;" />
+            </ui:VisualElement>
+            <ui:VisualElement name="container" style="flex-grow: 1; height: 85%;">
+                <ui:VisualElement name="textContainer" style="flex-grow: 1; height: 65%; align-items: center; justify-content: center;">
+                    <ui:Label tabindex="-1" text="Añadir oración:" parse-escape-sequences="true" display-tooltip-when-elided="true" name="lblMessage" class="text textSelectable" />
+                    <ui:TextField picking-mode="Ignore" name="txtNewSentence" password="false" class="textField" style="height: 100px; -unity-text-align: upper-center; font-size: 42px; -unity-font-style: normal;" />
+                </ui:VisualElement>
+                <ui:VisualElement name="buttonsContainer" style="flex-grow: 1; height: 35%; flex-direction: row; justify-content: space-around; align-items: center; align-self: auto;">
+                    <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" name="btnConfirm" class="buttons" style="background-color: rgba(25, 113, 43, 0.81);">
+                        <ui:VisualElement name="btnIcon" class="btnIcon" />
+                    </ui:Button>
+                    <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" name="btnCancel" class="buttons" style="background-color: rgb(161, 68, 68);">
+                        <ui:VisualElement name="btnIcon" class="btnIcon" style="background-image: url(&apos;project://database/Assets/UI%20Toolkit/UnityThemes/UnityDefaultRuntimeTheme.tss?fileID=4456449167576933126&amp;guid=f8f4435082d588a4790298f117a991bf&amp;type=3#check-dash@2x&apos;);" />
+                    </ui:Button>
+                </ui:VisualElement>
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

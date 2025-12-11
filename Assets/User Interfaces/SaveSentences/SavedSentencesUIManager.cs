@@ -55,7 +55,7 @@ public class SavedSentencesUIManager : MonoBehaviour, IObserver
         btnQuickAccess.RegisterCallback<ClickEvent>(ev =>
         {
             if (!string.IsNullOrEmpty(sentenceLabel.text))
-                ButtonManager.UpdateQuickAcces(sentenceSelected.Value.Trim(), quickAccessPopUp);
+                ButtonManager.UpdateQuickAccess(sentenceSelected.Value.Trim(), quickAccessPopUp);
         });
     }
 

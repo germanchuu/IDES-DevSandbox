@@ -96,14 +96,6 @@ public class SwitchScreens : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.Escape))
         {
-            if (documents[5].rootVisualElement.style.display == DisplayStyle.Flex)
-            {
-                GameObject gameObject = gameObjects[5];
-                ConfigurationUIManager configurationUI = gameObject.GetComponent<ConfigurationUIManager>();
-                configurationUI?.UpdateConfigData(ShowMainMenu);                
-                return;
-            }
-
             ShowMainMenu();
         }
     }

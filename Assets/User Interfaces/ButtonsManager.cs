@@ -2,6 +2,8 @@ using LeastSquares.Overtone;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Text;
+using Unity.Collections.LowLevel.Unsafe;
 using UnityEngine;
 
 public class ButtonManager
@@ -18,6 +20,7 @@ public class ButtonManager
         if (words.Length >= 2)
         {
             Array.Resize(ref words, words.Length - 1);
+
             return string.Join(" ", words);
         }
         else
@@ -29,7 +32,8 @@ public class ButtonManager
         popUp.ShowPopUp("Guardar oración", $"¿Estás seguro de guardar la oración?\n\n\"{sentence}\"", () =>
         {
             SavedSentencesManager manager = new();
-            manager.InsertData(sentence);              
+            manager.InsertData(char.ToUpper(sentence[0]) + sentence[1..]);
+            NGramaModel.AddNGramaTransitions(sentence);
         });        
     } 
     
@@ -41,9 +45,29 @@ public class ButtonManager
             manager.DeleteData(sentenceSelected.Key);
             observer.Notify();
         });
-    }    
+    }
 
-    public static void UpdateQuickAcces(string sentence, PopUpQuickAccessHandler popUp)
+    public static void AddNewDefaultSentence(string sentence, PopUpHandler popUp, IObserver observer)
+    {
+        popUp.ShowPopUp("Añadir nueva oración", $"¿Estás seguro de añadir la oración?\n\n\"{sentence}\"", () =>
+        {
+            SavedSentencesManager manager = new();
+            manager.InsertData(sentence);
+            observer.Notify();
+        });
+    }
+
+    public static void DeleteDefaultSentence(KeyValuePair<int, string> sentenceSelected, PopUpHandler popUp, IObserver observer)
+    {
+        popUp.ShowPopUp("Eliminar oración", $"¿Estás seguro de eliminar la oración?\n\n\"{sentenceSelected.Value}\"", () =>
+        {
+            DefaultSentencesManager manager = new();
+            manager.DeleteData(sentenceSelected.Key);
+            observer.Notify();
+        });
+    }
+
+    public static void UpdateQuickAccess(string sentence, PopUpQuickAccessHandler popUp)
     {        
         popUp.ShowPopUp($"Cambiar \"{sentence}\" por:", sentence);
     }
@@ -55,6 +79,23 @@ public class ButtonManager
             ConfigurationManager manager = new();
             manager.UpdateData(config);
             method?.Invoke();
+
+            DefaultSentencesManager defaultManager = new();
+            defaultManager.UpdateData("");                        
         });
+    }
+
+    public static void ShowErrorsValidations(List<string> errors, PopUpHandler popUp)
+    {
+        StringBuilder errorsInLine = new StringBuilder();
+
+        for (int i = 0; i < errors.Count; i++)
+        {
+            errorsInLine.Append(errors[i]);
+            if (i < errors.Count - 1) { 
+                errorsInLine.Append("\n");}
+        }
+
+        popUp.ShowPopUp("Campos inválidos", errorsInLine.ToString(), () => { });
     }
 }

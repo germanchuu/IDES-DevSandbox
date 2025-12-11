@@ -34,7 +34,8 @@ public class PopUpQuickAccessHandler : MonoBehaviour
             int index = i;
             lblQuickAccess[i].RegisterCallback<ClickEvent>(e =>
             {
-                selectedSentence = index;                
+                selectedSentence = index;
+                popUpConfirm.SetEnabled(true);
                 lblQuickAccess[index].AddToClassList("textSelected");
                 for (int j = 0; j < lblQuickAccess.Length; j++)
                 {
@@ -64,7 +65,8 @@ public class PopUpQuickAccessHandler : MonoBehaviour
 
     public void ShowPopUp(string message, string sentence)
     {
-        popUpDoc.rootVisualElement.style.display = DisplayStyle.Flex;        
+        popUpDoc.rootVisualElement.style.display = DisplayStyle.Flex;
+        popUpConfirm.SetEnabled(false);
         popUpMessage.text = message;
 
         sentenceToChange = sentence;

@@ -1,0 +1,302 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" GroupingSetting="Alphabetical" MembersFormat="NameAndType">
+  <Class Name="ButtonManager">
+    <Position X="16.75" Y="7.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAgAAAAAAAAAAAAABAAAAAAEAIAAGAAAAAAQAAgEAA=</HashCode>
+      <FileName>Assets\User Interfaces\ButtonsManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SwitchScreens">
+    <Position X="8.25" Y="16" Width="3.25" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAACAAEBAgAgAAgAAgAAAIAACAEACAIAAAAA0A=</HashCode>
+      <FileName>Assets\User Interfaces\SwitchScreens\SwitchScreens.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="popUp" />
+      <Field Name="popUpQuickAcces" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="SavedSentencesUIManager" BaseTypeListCollapsed="true">
+    <Position X="9" Y="12" Width="3.25" />
+    <TypeIdentifier>
+      <HashCode>AAAjiAAAAAkACAAAAAAAEAAEAEABAABAAAAAAAAABEQ=</HashCode>
+      <FileName>Assets\User Interfaces\SaveSentences\SavedSentencesUIManager.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="popUpHandler" />
+      <Field Name="quickAccessPopUp" />
+      <Field Name="tSPlayer" />
+      <Field Name="manager" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="SavedSentencesManager" BaseTypeListCollapsed="true">
+    <Position X="13" Y="12.5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIAEAAAAAAAAAAAgAAAAAAAAEAAAAAAABIAAAA=</HashCode>
+      <FileName>Assets\User Interfaces\SaveSentences\SavedSentencesManager.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="PopUpHandler">
+    <Position X="1.25" Y="15.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAQGAAAACIAAAAAAABAAEAQAAAAQAAQAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\User Interfaces\PopUp\PopUpHandler.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ResourceUIManager" BaseTypeListCollapsed="true">
+    <Position X="4.75" Y="6.75" Width="3.25" />
+    <AssociationLine Name="tSPlayer" Type="LeastSquares.Overtone.TTSPlayer" FixedFromPoint="true">
+      <Path>
+        <Point X="8" Y="9.312" />
+        <Point X="10.1" Y="9.312" />
+        <Point X="10.1" Y="8.81" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAACAAAQAGAAABEFECJiAMAACEAAAARAAAAAACAABBU=</HashCode>
+      <FileName>Assets\User Interfaces\MakeSentence\ResourceUIManager.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="loader" />
+      <Field Name="popUpHandler" />
+      <Field Name="tSPlayer" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Pictogram">
+    <Position X="2.25" Y="11.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAEAAEAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\User Interfaces\MakeSentence\Resources.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Theme">
+    <Position X="1.5" Y="9.25" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAARAAAAAAAAAAAAAEAAEAAAAAAAAAAAEAAA=</HashCode>
+      <FileName>Assets\User Interfaces\MakeSentence\Resources.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Field Name="pictograms" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="ResourceLoader">
+    <Position X="1.25" Y="6.75" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>CAAAAAAEQBAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAEA=</HashCode>
+      <FileName>Assets\User Interfaces\MakeSentence\ResourceLoader.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MainMenuUIManager" BaseTypeListCollapsed="true">
+    <Position X="13.25" Y="7.25" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AEACAAAIAAABAgAAAAAkAAAAAAFAAABAABAAAAAAAEA=</HashCode>
+      <FileName>Assets\User Interfaces\MainMenu\MainMenuUIManager.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="tSPlayer" />
+      <Field Name="switchScreens" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="QuickAccessManager" BaseTypeListCollapsed="true">
+    <Position X="16" Y="17" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIAEAAAAAAAAAAAAAAAAAAAAEAAAAAAABAAAAA=</HashCode>
+      <FileName>Assets\User Interfaces\MainMenu\PopUpQuickAcces\QuickAccessManager.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="PopUpQuickAccessHandler">
+    <Position X="12.75" Y="15.75" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAQGAAIAAIAAAAAAABAAAAUQAAAAAAQAAAIAAAAAEE=</HashCode>
+      <FileName>Assets\User Interfaces\MainMenu\PopUpQuickAcces\QuickAccessHandler.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="manager" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="DefaultSentencesUIManager" BaseTypeListCollapsed="true">
+    <Position X="20" Y="9.25" Width="3.25" />
+    <AssociationLine Name="popUpHandler" Type="PopUpHandler" ManuallyRouted="true">
+      <Path>
+        <Point X="20" Y="11.116" />
+        <Point X="15.833" Y="11.116" Type="JumpStart" />
+        <Point X="15.667" Y="11.116" Type="JumpEnd" />
+        <Point X="12.409" Y="11.116" />
+        <Point X="12.409" Y="15.603" />
+        <Point X="4.927" Y="15.603" Type="JumpStart" />
+        <Point X="4.76" Y="15.603" Type="JumpEnd" />
+        <Point X="4.583" Y="15.603" Type="JumpStart" />
+        <Point X="4.417" Y="15.603" Type="JumpEnd" />
+        <Point X="2.641" Y="15.603" />
+        <Point X="2.641" Y="15.75" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>EAADCAAAAAkACAAAAAAAWAIEAEABAABAAAAAAAAABEQ=</HashCode>
+      <FileName>Assets\User Interfaces\DefaultSentences\DefaultSentencesUIManager.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="popUpQuickAccess" />
+      <Field Name="popUpHandler" />
+      <Field Name="popUpNewDefaultSentence" />
+      <Field Name="tSPlayer" />
+      <Field Name="manager" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="DefaultSentencesManager" BaseTypeListCollapsed="true">
+    <Position X="24.25" Y="9.5" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAIAEAAAAAAAAAAAgAAAAAAAAEAgAAAAABAAAAA=</HashCode>
+      <FileName>Assets\User Interfaces\DefaultSentences\DefaultSentencesManager.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="defaultSentences" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="ConfigurationUIManager" BaseTypeListCollapsed="true">
+    <Position X="5.25" Y="0.5" Width="2.75" />
+    <AssociationLine Name="tSPlayer" Type="LeastSquares.Overtone.TTSPlayer" ManuallyRouted="true">
+      <Path>
+        <Point X="8" Y="3.424" />
+        <Point X="9.217" Y="3.424" />
+        <Point X="9.217" Y="6.311" />
+        <Point X="10.5" Y="6.311" />
+        <Point X="10.5" Y="7" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AACKAAAiAAQEgAgAAECAAAAFAIDAAABBAAAIMACEhEQ=</HashCode>
+      <FileName>Assets\User Interfaces\Configuration\ConfigurationUIManager.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="tSPlayer" />
+      <Field Name="popUp" />
+      <Field Name="manager" />
+      <Field Name="config" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="ConfigurationManager" BaseTypeListCollapsed="true">
+    <Position X="1" Y="1.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIAEAAAAAAAAAAAAAAAAAAAAEAAAAAAABAAAAA=</HashCode>
+      <FileName>Assets\User Interfaces\Configuration\ConfigurationManager.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Configuration">
+    <Position X="1" Y="3.5" Width="3" />
+    <TypeIdentifier>
+      <HashCode>AAAgAAAAAAAAQIAAAAAAAAgAAEAEAAAAAAAgCBAAAAA=</HashCode>
+      <FileName>Assets\User Interfaces\Configuration\Configuration.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Subject" BaseTypeListCollapsed="true">
+    <Position X="18.5" Y="5.25" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAIAAAAAAgAAAAAAAAAAAAAAAAAIAAAAAAAAAAgAAA=</HashCode>
+      <FileName>Assets\PatternObserver\Subject.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Field Name="observers" />
+    </ShowAsCollectionAssociation>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="FileAccess">
+    <Position X="13.5" Y="4" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAEAAAAAAAAAAAAAAQAAACAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\DataFileAccess\FileAccess.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LeastSquares.Overtone.TTSPlayer">
+    <Position X="9.5" Y="7" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAIAAAAAAAAAAAAAIAAABAAAAAAAAAg=</HashCode>
+      <FileName>Assets\Overtone\Scripts\TTSPlayer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PopUpNewDefaultSentenceHandler">
+    <Position X="20.5" Y="13.5" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAQGAAAAAIAAAAAAAAAAEAUAAAAAAAQABAAAAAAAUA=</HashCode>
+      <FileName>Assets\User Interfaces\DefaultSentences\PopUpNewSentence\NewDefaultSentenceHandler.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="manager" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="DefaultSentences">
+    <Position X="24" Y="12.5" Width="3" />
+    <TypeIdentifier>
+      <HashCode>IAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAA=</HashCode>
+      <FileName>Assets\User Interfaces\DefaultSentences\DefaultSentences.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NGramaModel">
+    <Position X="5" Y="12.25" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>BAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\NGramas\NGramaModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="IDataInsertable&lt;T&gt;">
+    <Position X="9.75" Y="2.25" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAA=</HashCode>
+      <FileName>Assets\DataFileAccess\DataHandler.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="IDataGetable&lt;T&gt;">
+    <Position X="14.25" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\DataFileAccess\DataHandler.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="IDataDeletable&lt;T&gt;">
+    <Position X="16.25" Y="2.25" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\DataFileAccess\DataHandler.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="IDataUpdatable&lt;T&gt;">
+    <Position X="12" Y="2.25" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\DataFileAccess\DataHandler.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="IDataHandler&lt;TInsert, TGet, TDelete, TUpdate&gt;">
+    <Position X="9.75" Y="4" Width="3.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\DataFileAccess\DataHandler.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="IObserver">
+    <Position X="16.25" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\PatternObserver\IObserverSubject.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="ISubject">
+    <Position X="16.25" Y="5.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAgAAAAAAAAAAAAAAAAAIAAAAAAAAAAgAAA=</HashCode>
+      <FileName>Assets\PatternObserver\IObserverSubject.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

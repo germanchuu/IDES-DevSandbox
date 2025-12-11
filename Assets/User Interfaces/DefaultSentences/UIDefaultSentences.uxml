@@ -11,6 +11,14 @@
         <ui:VisualElement name="bodyContainer" style="flex-grow: 1; height: 80%; flex-direction: row;">
             <ui:ScrollView scroll-deceleration-rate="0,135" elasticity="0,1" name="scrollSentences" style="width: 65%;" />
             <ui:VisualElement name="buttonsContainer" style="flex-grow: 1; width: 35%; height: auto; flex-direction: column; justify-content: flex-start; align-items: stretch; align-self: auto; margin-top: 15px; margin-right: 15px; margin-bottom: 15px; margin-left: 15px;">
+                <ui:VisualElement name="containerNewSentence" style="flex-grow: 1; width: auto; justify-content: space-around; height: 33%;">
+                    <ui:Button text="&#10;" parse-escape-sequences="true" display-tooltip-when-elided="true" name="btnNewSentence" class="button">
+                        <ui:VisualElement name="buttonDistribution" class="buttonDistribution">
+                            <ui:VisualElement name="icon" class="buttonIcon" style="background-image: resource(&apos;AddNew&apos;); -unity-background-image-tint-color: rgba(173, 173, 173, 0.45);" />
+                            <ui:Label tabindex="-1" text="Añadir Oración" parse-escape-sequences="true" display-tooltip-when-elided="true" class="buttonText" />
+                        </ui:VisualElement>
+                    </ui:Button>
+                </ui:VisualElement>
                 <ui:VisualElement name="containerQuickSetup" style="flex-grow: 1; width: auto; justify-content: space-around; height: 33%;">
                     <ui:Button text="&#10;" parse-escape-sequences="true" display-tooltip-when-elided="true" name="btnQuick" class="button">
                         <ui:VisualElement name="buttonDistribution" class="buttonDistribution">
@@ -24,6 +32,14 @@
                         <ui:VisualElement name="buttonDistribution" class="buttonDistribution">
                             <ui:VisualElement name="icon" class="buttonIcon" style="background-image: url(&apos;project://database/Assets/User%20Interfaces/Resources/Listen.png?fileID=2800000&amp;guid=772ca2e5d2b99dd478b678ecbf80400f&amp;type=3#Listen&apos;);" />
                             <ui:Label tabindex="-1" text="Escuchar" parse-escape-sequences="true" display-tooltip-when-elided="true" class="buttonText" />
+                        </ui:VisualElement>
+                    </ui:Button>
+                </ui:VisualElement>
+                <ui:VisualElement name="containerDelete" style="flex-grow: 1; width: auto; justify-content: space-around; height: 33%;">
+                    <ui:Button text="&#10;" parse-escape-sequences="true" display-tooltip-when-elided="true" name="btnDelete" class="button">
+                        <ui:VisualElement name="buttonDistribution" class="buttonDistribution">
+                            <ui:VisualElement name="icon" class="buttonIcon" style="background-image: url(&apos;project://database/Assets/User%20Interfaces/Resources/Delete.png?fileID=2800000&amp;guid=f37f0f9af0bea0b479cb3789977178dc&amp;type=3#Delete&apos;);" />
+                            <ui:Label tabindex="-1" text="Eliminar" parse-escape-sequences="true" display-tooltip-when-elided="true" class="buttonText" />
                         </ui:VisualElement>
                     </ui:Button>
                 </ui:VisualElement>

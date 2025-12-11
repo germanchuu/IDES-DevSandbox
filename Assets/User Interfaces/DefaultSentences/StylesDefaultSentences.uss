@@ -18,7 +18,7 @@ VisualElement {
     height: auto;
     justify-content: space-around;
     align-items: stretch;
-    margin-left: 15px;
+    margin-left: 0;
 }
 
 .buttonDistribution {
@@ -38,4 +38,19 @@ VisualElement {
     border-top-color: rgba(149, 149, 149, 0);
     border-bottom-color: rgba(149, 149, 149, 0);
     justify-content: center;
+}
+
+TextInput {
+    background-color: rgba(255, 255, 255, 0);
+    border-left-color: rgba(0, 0, 0, 0);
+    border-right-color: rgba(0, 0, 0, 0);
+    border-top-color: rgba(0, 0, 0, 0);
+    border-bottom-color: rgba(0, 0, 0, 0);
+}
+
+.textField {
+    font-size: 30px;
+    -unity-font-style: normal;
+    opacity: 1;
+    background-color: rgba(255, 255, 255, 0);
 }

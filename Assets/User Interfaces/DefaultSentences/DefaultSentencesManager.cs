@@ -1,28 +1,69 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
-public class DefaultSentencesManager : IDataHandler<object, List<string>, object, List<string>>
+public class DefaultSentencesManager : IDataHandler<string, DefaultSentences, int, string>
 {
     private string dataFileName = "defaultSentences";
+    public DefaultSentences defaultSentences;
 
-    public void DeleteData(object data)
+    public void InizialiteDefaultSentences()
     {
-        throw new System.NotImplementedException();
+        defaultSentences = GetData();
+
+        if (defaultSentences == null || defaultSentences.initialSentences.Count == 0 || defaultSentences.sentences.Count == 0)
+        {
+            defaultSentences = new DefaultSentences();            
+            FileAccess.SaveData(defaultSentences, dataFileName);
+        }
     }
 
-    public List<string> GetData()
+    public void DeleteData(int indexData)
     {
-        return FileAccess.GetData<List<string>>(dataFileName);
+        defaultSentences = GetData();
+        if (defaultSentences.initialSentences.Remove(indexData))
+            FileAccess.SaveData(defaultSentences, dataFileName);
+        
+        if (defaultSentences.sentences.Remove(indexData))
+            FileAccess.SaveData(defaultSentences, dataFileName);
+
+        defaultSentences = null;
     }
 
-    public void InsertData(object data)
+    public DefaultSentences GetData()
     {
-        throw new System.NotImplementedException();
+        return FileAccess.GetData<DefaultSentences>(dataFileName);
     }
 
-    public void UpdateData(List<string> data)
+    public void InsertData(string data)
     {
-        FileAccess.SaveData(data, dataFileName);
+        defaultSentences = GetData();
+        defaultSentences ??= new DefaultSentences();
+
+        int nextIndex = GetLastIndex() + 1;
+        defaultSentences.sentences.Add(nextIndex, data);
+        FileAccess.SaveData(defaultSentences, dataFileName);
+
+        defaultSentences = null;
+    }
+
+    public void UpdateData(string data)
+    {
+        defaultSentences = GetData();
+        defaultSentences ??= new DefaultSentences();
+
+        defaultSentences.GetSentences();
+        FileAccess.SaveData(defaultSentences, dataFileName);
+
+        defaultSentences = null;
+    }
+
+    private int GetLastIndex()
+    {
+        if (defaultSentences.sentences.Any())
+            return defaultSentences.sentences.Keys.Max();
+        else
+            return 0;
     }
 }
